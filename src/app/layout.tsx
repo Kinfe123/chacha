@@ -1,6 +1,7 @@
 import "@/styles/globals.css"
-import {ClerkProvider} from '@clerk/nextjs'
-import {dark} from '@clerk/themes'
+import { ClerkProvider } from '@clerk/nextjs'
+import { dark } from '@clerk/themes'
+import { fontSans , fontHeading , fontUrban, fontSubheading } from "../../assets/fonts"
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import { siteConfig } from "@/config/site"
@@ -67,24 +68,37 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
 
     <ClerkProvider appearance={{ baseTheme: dark }}>
-    <html lang="en" suppressHydrationWarning>
-      <head />
-      <body
-        className={cn(
-          "min-h-screen bg-background antialiased",
-          inter.className
-        )}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body
+          className={cn(
+            "min-h-screen bg-transparent font-subheading antialiased",
+            inter.className,
+            fontSans.variable,
+            fontHeading.variable,
+            fontUrban.variable,
+            fontSubheading.variable
+          )}
         >
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+        <div className="hidden dark:block">
+          <div className="absolute  bottom-0 top-0 z-[-2] h-screen overflow-hidden    w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
+
+          </div>
+        </div>
+        <div className="block dark:hidden">
+        <div className="absolute top-0 z-[-2] h-screen w-screen rotate-180 transform bg-white bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"></div>
+
+        </div>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
     </ClerkProvider>
   )
 }
