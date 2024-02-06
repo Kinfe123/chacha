@@ -23,11 +23,11 @@ export const Logo = () => {
         "flex flex-col items-center",
       
       )}>
-        <p className="text-xl font-semibold">
-          Gamehub
+        <p className="text-4xl font-semibold">
+          Cha-Cha
         </p>
-        <p className="text-sm text-muted-foreground">
-          Let&apos;s play
+        <p className="text-md text-muted-foreground">
+          Let&apos;s Gather - Ethiopia&apos;s first streaming services.
         </p>
       </div>
     </div>
