@@ -65,6 +65,8 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
+
+    <ClerkProvider appearance={{ baseTheme: dark }}>
     <html lang="en" suppressHydrationWarning>
       <head />
       <body
@@ -83,5 +85,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </ThemeProvider>
       </body>
     </html>
+    </ClerkProvider>
   )
 }
