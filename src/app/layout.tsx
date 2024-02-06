@@ -1,8 +1,8 @@
 import "@/styles/globals.css"
-
+import {ClerkProvider} from '@clerk/nextjs'
+import {dark} from '@clerk/themes'
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
-
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
