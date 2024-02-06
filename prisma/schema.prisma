@@ -1,0 +1,84 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+model User {
+  id String @id @default(uuid())
+  username String @unique
+  imageUrl String @db.Text
+  externalUserId String @unique
+  bio String? @db.Text
+
+  following Follow[] @relation("Following")
+  followedBy Follow[] @relation("FollowedBy")
+
+  blocking Block[] @relation("Blocking")
+  blockedBy Block[] @relation("BlockedBy")
+
+  stream Stream?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Stream {
+  id String @id @default(uuid())
+  name String @db.Text
+  thumbnailUrl String? @db.Text
+
+  ingressId String? @unique
+  serverUrl String? @db.Text
+  streamKey String? @db.Text
+
+  isLive Boolean @default(false)
+  isChatEnabled Boolean @default(true)
+  isChatDelayed Boolean @default(false)
+  isChatFollowersOnly Boolean @default(false)
+
+  userId String @unique
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([ingressId])
+  // @@fulltext([name])
+}
+
+model Follow {
+  id String @id @default(uuid())
+  followerId String
+  followingId String
+
+  follower User @relation(name: "Following", fields: [followerId], references: [id], onDelete: Cascade)
+  following User @relation(name: "FollowedBy", fields: [followingId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([followerId, followingId])
+  @@index([followerId])
+  @@index([followingId])
+}
+
+model Block {
+  id String @id @default(uuid())
+  blockerId String
+  blockedId String
+
+  blocker User @relation(name: "Blocking", fields: [blockerId], references: [id], onDelete: Cascade)
+  blocked User @relation(name: "BlockedBy", fields: [blockedId], references: [id], onDelete: Cascade)
+
+  @@unique([blockerId, blockedId])
+  @@index([blockerId])
+  @@index([blockedId])
+}
