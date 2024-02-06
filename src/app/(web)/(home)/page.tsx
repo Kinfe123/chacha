@@ -1,3 +1,4 @@
+import { ModeToggle } from "@/components/mode-toggle";
 import { Suspense } from "react";
 
 // import { Results, ResultsSkeleton } from "./_components/results";
@@ -8,6 +9,7 @@ export default function Page() {
       <Suspense fallback='....'>
         <div>
             <p>hello world</p>
+            <ModeToggle />
         </div>
         
       </Suspense>
