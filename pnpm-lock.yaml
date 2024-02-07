@@ -102,7 +102,7 @@ dependencies:
     specifier: ^2.2.2
     version: 2.2.2
   svix:
-    specifier: ^1.14.0
+    specifier: ^1.16.0
     version: 1.16.0
   tailwind-merge:
     specifier: ^2.1.0
