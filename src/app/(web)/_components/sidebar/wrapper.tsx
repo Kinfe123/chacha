@@ -32,7 +32,7 @@ export const Wrapper = ({
   return (
     <aside
       className={cn(
-        "fixed left-0 flex flex-col w-60 h-full bg-background border-r border-[#2D2E35] z-50",
+        "fixed left-0 flex flex-col w-60 h-full bg-gradient-to-tr from-transparent to-background border-r border-[#2D2E35] z-50",
         collapsed && "w-[70px]"
       )}
     >
