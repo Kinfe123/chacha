@@ -17,7 +17,7 @@ import { getSelf } from "@/lib/valid-user";
 
 export const Sidebar = async () => {
   const recommended = await getRecommended();
-  const user = await getSelf()
+
   // const following = await getFollowedUsers();
 
   return (
@@ -26,7 +26,7 @@ export const Sidebar = async () => {
       <div className="space-y-4 pt-4 lg:pt-0">
          {/* <Following data={following} /> */}
          {/* @ts-ignore */}
-        <Recommended data={[user]} />
+        <Recommended data={recommended} />
       </div>
     </Wrapper>
   );
