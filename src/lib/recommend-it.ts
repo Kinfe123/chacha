@@ -14,6 +14,10 @@ export const getRecommended = async () => {
   let users = []
 
   if (userId) {
+    // this dees a fetching with and clause of 
+    // 1 .The user is not logged in or th user should not apear on the list
+    // 2. The user should not be included in followers lists
+    // 3. The user is not found in blocked lists
     users = await db.user.findMany({
       where: {
         AND: [
