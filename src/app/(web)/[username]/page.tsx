@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getUserByUsername } from "@/lib/user-helper";
 import { isFollowingUser } from "@/lib/follow-user";
 import { isBlockedByUser } from "@/lib/blocks";
-import { StreamPlayer } from "@/components/stream-player";
+import { StreamPlayer } from "@/components/streaming";
 
 interface UserPageProps {
   params: {
