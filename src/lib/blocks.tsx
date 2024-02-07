@@ -46,7 +46,7 @@ export const blockUser = async (id: string) => {
   if (!otherUser) {
     throw new Error("User not found");
   }
-
+ // already index based on blocker and blocked id for faster querying
   const existingBlock = await db.block.findUnique({
     where: {
       blockerId_blockedId: {
