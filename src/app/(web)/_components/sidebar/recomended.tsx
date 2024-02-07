@@ -48,6 +48,6 @@ export const RecommendedSkeleton = () => {
       {[...Array(3)].map((_, i) => (
         <UserItemSkeleton key={i} />
       ))}
-    </ul>
+  </ul>
   );
 };
