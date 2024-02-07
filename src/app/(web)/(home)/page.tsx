@@ -9,9 +9,7 @@ export default function Page() {
     <div className="h-full p-8 max-w-screen-2xl mx-auto">
       <Suspense fallback='....'>
         <div>
-            <p>hello world</p>
-            <ModeToggle />
-            <UserButton/>
+            
         </div>
         
       </Suspense>
