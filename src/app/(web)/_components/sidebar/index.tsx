@@ -11,20 +11,19 @@ import {
   Recommended, 
   RecommendedSkeleton
 } from "./recomended";
-import { currentUser } from "@clerk/nextjs";
-import { getSelf } from "@/lib/valid-user";
+import { getFollowedUsers } from "@/lib/follow-user";
 
 
 export const Sidebar = async () => {
   const recommended = await getRecommended();
 
-  // const following = await getFollowedUsers();
+  const following = await getFollowedUsers();
 
   return (
     <Wrapper>
       <Toggle />
       <div className="space-y-4 pt-4 lg:pt-0">
-         {/* <Following data={following} /> */}
+         <Following data={following} />
          {/* @ts-ignore */}
         <Recommended data={recommended} />
       </div>
