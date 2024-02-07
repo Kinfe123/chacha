@@ -3,6 +3,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 import { dark } from '@clerk/themes'
 import { fontSans , fontHeading , fontUrban, fontSubheading } from "../../assets/fonts"
 import type { Metadata, Viewport } from "next"
+import {Toaster} from 'sonner'
 import { Inter } from "next/font/google"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
@@ -95,7 +96,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
             enableSystem
             disableTransitionOnChange
           >
+            <Toaster theme="system" position="bottom-right"/>
             {children}
+
           </ThemeProvider>
         </body>
       </html>

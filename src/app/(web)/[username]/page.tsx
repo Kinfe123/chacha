@@ -4,6 +4,8 @@ import { getUserByUsername } from "@/lib/user-helper";
 import { isFollowingUser } from "@/lib/follow-user";
 import { isBlockedByUser } from "@/lib/blocks";
 import { StreamPlayer } from "@/components/streaming";
+import { Button } from "@/components/ui/button";
+import { Actions } from "./_components/followup";
 
 interface UserPageProps {
   params: {
@@ -28,11 +30,15 @@ const UserPage = async ({
   }
 
   return ( 
-    <StreamPlayer
-      user={user}
-      stream={user.stream}
-      isFollowing={isFollowing}
-    />
+    <div>
+        the user is {user.username  }
+       <Actions userId={user.id} isFollowing={isFollowing}/>
+    </div>
+    // <StreamPlayer
+    //   user={user}
+    //   stream={user.stream}
+    //   isFollowing={isFollowing}
+    // />
   );
 }
  
