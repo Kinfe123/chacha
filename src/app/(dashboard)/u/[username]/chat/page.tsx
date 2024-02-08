@@ -5,16 +5,17 @@ import { ToggleCard } from "./_components/toogly-chat";
 
 const ChatPage = async () => {
   const self = await getSelf();
-  const stream = await getStreamByUserId(self.id);
-
+  
+  const stream = await getStreamByUserId(self.id);  
+  console.log("THe user stream is: " , stream)
   if (!stream) {
     throw new Error("Stream not found");
   }
 
   return ( 
-    <div className="p-6">
+    <div className="p-10">
       <div className="mb-4">
-        <h1 className="text-2xl font-bold">
+        <h1 className="text-3xl font-heading font-bold">
           Chat settings
         </h1>
       </div>
