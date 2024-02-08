@@ -18,13 +18,11 @@ const CreatorLayout = async ({
 }: CreatorLayoutProps) => {
   const self = await getUserByUsername(params.username);
   const self2 = await getSelf()
-  if(!self2){
-    redirect('/')
+  console.log('THe self2 is : ' , self2)
+ 
+  if (!self) {
+    redirect("/");
   }
-
-  // if (!self) {
-  //   redirect("/");
-  // }
 
   return ( 
     <>
