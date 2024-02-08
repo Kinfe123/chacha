@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { ArrowBigLeftDashIcon } from "lucide-react";
+import { HomeIcon } from "lucide-react";
 import { UserButton } from "@clerk/nextjs";
 
 import { Button } from "@/components/ui/button";
 
 export const Actions = () => {
   return (
-    <div className="flex items-center justify-end gap-x-2">
+    <div className="flex items-center justify-end gap-x-3">
       <Button
         size="sm"
         variant="ghost"
@@ -14,8 +14,8 @@ export const Actions = () => {
         asChild
       >
         <Link href="/">
-          <ArrowBigLeftDashIcon className="h-5 w-5 mr-2" />
-          Back
+          <HomeIcon className="h-4 w-4 mr-2" />
+          Homie
         </Link>
       </Button>
       <UserButton
