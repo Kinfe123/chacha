@@ -7,7 +7,6 @@ const ChatPage = async () => {
   const self = await getSelf();
   
   const stream = await getStreamByUserId(self.id);  
-  console.log("THe user stream is: " , stream)
   if (!stream) {
     throw new Error("Stream not found");
   }
