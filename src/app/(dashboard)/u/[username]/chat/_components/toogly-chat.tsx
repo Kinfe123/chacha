@@ -31,7 +31,7 @@ export const ToggleCard = ({
   };
 
   return (
-    <div className="rounded-xl  bg-mute p-6">
+    <div className="rounded-xl bg-gradient-to-tr from-muted/20  bg-muted/40 p-6">
       <div className="flex items-center justify-between">
         <p className="font-semibold shrink-0">
           {label}
