@@ -21,7 +21,7 @@ export const Logo = () => {
       
         )}>
           <p className="text-lg font-semibold">
-            ChaCCha
+            ChaCha
           </p>
           <p className="text-xs text-muted-foreground">
             Creator Hub
