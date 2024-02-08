@@ -59,7 +59,7 @@ export const ConnectModal = () => {
       </DialogTrigger>
       <DialogContent  className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
         <DialogHeader>
-          <DialogTitle>Generating Connction String</DialogTitle>
+          <DialogTitle className="font-heading tracking-norrmal text-xl">Generating Connection String</DialogTitle>
         </DialogHeader>
         <Select
           disabled={isPending}
