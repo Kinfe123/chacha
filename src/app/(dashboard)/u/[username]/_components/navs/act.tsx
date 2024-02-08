@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LogOut } from "lucide-react";
+import { ArrowBigLeftDashIcon } from "lucide-react";
 import { UserButton } from "@clerk/nextjs";
 
 import { Button } from "@/components/ui/button";
@@ -14,8 +14,8 @@ export const Actions = () => {
         asChild
       >
         <Link href="/">
-          <LogOut className="h-5 w-5 mr-2" />
-          Exit
+          <ArrowBigLeftDashIcon className="h-5 w-5 mr-2" />
+          Back
         </Link>
       </Button>
       <UserButton
