@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { useState, useTransition, useRef, ElementRef } from "react";
 import { AlertTriangle } from "lucide-react";
 import { IngressInput } from "livekit-server-sdk";
-
+import { Loader } from "lucide-react";
 import { createIngress } from "@/actions/ingress";
 import { Button } from "@/components/ui/button";
 import {
@@ -31,6 +31,7 @@ import {
 const RTMP = String(IngressInput.RTMP_INPUT);
 const WHIP = String(IngressInput.WHIP_INPUT);
 
+
 type IngressType = typeof RTMP | typeof WHIP;
 
 export const ConnectModal = () => {
@@ -40,16 +41,17 @@ export const ConnectModal = () => {
 
   const onSubmit = () => {
     startTransition(() => {
-        console.log('Hello world')
-    //   createIngress(parseInt(ingressType))
-    //     .then(() => {
-    //       toast.success("Ingress created");
-    //       closeRef?.current?.click();
-    //     })
-    //     .catch(() => toast.error("Something went wrong"));
+      createIngress(parseInt(ingressType))
+        .then(() => {
+          toast.success("Ingress created");
+          closeRef?.current?.click();
+        })
+        .catch((err) => toast.error("Something went wrong " + err));
     });
   }
 
+
+  console.log("The ingress type is: " , ingressType)
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -92,6 +94,7 @@ export const ConnectModal = () => {
             onClick={onSubmit}
             variant="default"
           >
+            {isPending ? <Loader className='animate-spin w-4 h-4 mr-2' />: ""}
             Generate
           </Button>
         </div>
