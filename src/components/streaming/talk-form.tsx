@@ -1,17 +1,16 @@
 "use client"
 
 import { useState } from "react"
-import { DollarSign, SendHorizonal } from "lucide-react"
+import {  SendHorizonal } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Skeleton } from "@/components/ui/skeleton"
 
-import { Hint } from "../hint"
+
 import { ChatInfo } from "./talk-info"
 import PaymentModal from "./featured-modal/payment-modal"
-import { useViewerToken } from "@/hooks/use-view-token"
 
 interface ChatFormProps {
   onSubmit: () => void
@@ -28,7 +27,7 @@ export const ChatForm = ({
   onSubmit,
   value,
   onChange,
-  hostName
+  hostName,
   isHidden,
   isFollowersOnly,
   isFollowing,
