@@ -79,7 +79,7 @@ export const ChatForm = ({
         />
       </div>
       <div className="ml-auto">
-        <div className="flex gap-x-2">
+        <div className="flex items-center justify-center gap-x-2">
           <Hint label="Donate" asChild>
             <DollarSign className="h-4 w-4 " />
           </Hint>
