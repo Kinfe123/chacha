@@ -14,6 +14,7 @@ export const getStreams = async () => {
   let streams = [];
 
   if (userId) {
+    // not including the user who got blocked by the streamer if logged in
     streams = await db.stream.findMany({
       where: {
         user: {
@@ -43,6 +44,7 @@ export const getStreams = async () => {
       ],
     });
   } else {
+    // selecting a random live out the lives if not logged in since we dont know the relationship
     streams = await db.stream.findMany({
       select: {
         id: true,

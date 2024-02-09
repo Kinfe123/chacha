@@ -2,16 +2,17 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { UserButton } from "@clerk/nextjs";
 import { Suspense } from "react";
 
-// import { Results, ResultsSkeleton } from "./_components/results";
+import { StreamSkeleton, Streams } from "./_components/StreamLists";
 
 export default function Page() {
   return (
     <div className="h-full p-8 max-w-screen-2xl mx-auto">
-      <Suspense fallback='....'>
+      <Suspense fallback={<StreamSkeleton />}>
+
         <div>
-            This is the home page
+          <Streams />
         </div>
-        
+
       </Suspense>
     </div>
   );

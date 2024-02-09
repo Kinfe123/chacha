@@ -29,7 +29,7 @@ export const InfoCard = ({
     <div className="px-4">
       <div className="rounded-xl bg-background">
         <div className="flex items-center gap-x-2.5 p-4">
-          <div className="h-auto w-auto rounded-md border-2 border-white/90 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))] p-2">
+          <div className="h-auto w-auto rounded-md border-2 border-white/5 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))] p-2">
             <Pencil className="h-5 w-5" />
           </div>
           <div>
