@@ -22,7 +22,7 @@ export const SearchLists = async ({ term }: ResultsProps) => {
       )}
       <div className="flex flex-col gap-y-4">
         {data.map((result) => (
-          <SeachCard data={result} key={result.id} />
+          <SearchCard data={result} key={result.id} />
         ))}
       </div>
     </div>
