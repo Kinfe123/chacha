@@ -10,6 +10,8 @@ import { Skeleton } from "@/components/ui/skeleton"
 
 import { Hint } from "../hint"
 import { ChatInfo } from "./talk-info"
+import PaymentModal from "./featured-modal/payment-modal"
+import { useViewerToken } from "@/hooks/use-view-token"
 
 interface ChatFormProps {
   onSubmit: () => void
@@ -19,18 +21,21 @@ interface ChatFormProps {
   isFollowersOnly: boolean
   isFollowing: boolean
   isDelayed: boolean
+  hostName: string
 }
 
 export const ChatForm = ({
   onSubmit,
   value,
   onChange,
+  hostName
   isHidden,
   isFollowersOnly,
   isFollowing,
   isDelayed,
 }: ChatFormProps) => {
   const [isDelayBlocked, setIsDelayBlocked] = useState(false)
+ 
 
   const isFollowersOnlyAndNotFollowing = isFollowersOnly && !isFollowing
   // disabling the button if the user is blocked by delay or not following or is allowed only for followers or ishidden
@@ -80,9 +85,7 @@ export const ChatForm = ({
       </div>
       <div className="ml-auto">
         <div className="flex items-center justify-center gap-x-2">
-          <Hint label="Donate" asChild>
-            <DollarSign className="h-4 w-4 " />
-          </Hint>
+         <PaymentModal name={hostName}/>
           <Button
             type="submit"
             variant="default"

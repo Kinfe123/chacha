@@ -77,6 +77,7 @@ export const Chat = ({
           <ChatForm
             onSubmit={onSubmit}
             value={value}
+            hostName={hostName}
             onChange={onChange}
             isHidden={!isHidden}
             isFollowersOnly={isChatFollowersOnly}
