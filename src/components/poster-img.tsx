@@ -21,7 +21,7 @@ export const Thumbnail = ({
 
   if (!src) {
     content = (
-      <div className="flex h-full w-full flex-col items-center justify-center gap-y-4 rounded-md bg-background transition-transform group-hover:-translate-y-2 group-hover:translate-x-2">
+      <div className="flex h-full w-full flex-col items-center justify-center gap-y-4 rounded-xl border-white/40 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))] transition-transform ">
         <UserAvatar
           size="lg"
           showBadge
@@ -43,7 +43,7 @@ export const Thumbnail = ({
   }
 
   return (
-    <div className="group relative aspect-video cursor-pointer rounded-md">
+    <div className="border-1 group relative aspect-video cursor-pointer rounded-xl border-[1.2px] border-white/10">
       <div className="bg-trasnsparent absolute inset-0 flex items-center justify-center rounded-md opacity-0 transition-opacity group-hover:opacity-100" />
       {content}
       {isLive && src && (
