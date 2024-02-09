@@ -46,6 +46,7 @@ export const Chat = ({
 
   const [value, setValue] = useState("");
   const { chatMessages: messages, send } = useChat();
+  console.log('THe message is : ' , messages , value)
 
   useEffect(() => {
     if (matches) {

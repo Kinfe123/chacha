@@ -21,7 +21,7 @@ export const ChatMessage = ({
       </p>
       <div className="flex flex-wrap items-baseline gap-1 grow">
         <p className="text-sm font-semibold whitespace-nowrap">
-          <span className="truncate" style={{ color: color }}>
+          <span className="truncate" style={{color:color}}>
             {data.from?.name}
           </span>:
         </p>
