@@ -96,7 +96,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             enableSystem
             disableTransitionOnChange
           >
-            <Toaster theme="system" position="bottom-right"/>
+            <Toaster theme="system" position="bottom-right" className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]"/>
             {children}
 
           </ThemeProvider>
