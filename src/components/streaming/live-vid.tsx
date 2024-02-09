@@ -63,6 +63,7 @@ export const LiveVideo = ({
     .filter((track) => track.participant.identity === participant.identity)
     .forEach((track) => {
       if (videoRef.current) {
+        // this is attaching the vid ref to the live vid that comes from livekit 
         track.publication.track?.attach(videoRef.current)
       }
     });

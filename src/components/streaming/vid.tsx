@@ -32,9 +32,7 @@ export const Video = ({
   let content;
 
 
-  console.log('THe participatn is : ' , participant )
-  console.log('The tracks is : ' , tracks)
-  console.log("The connctionState is : ", connectionState)
+
   if (!participant && connectionState === ConnectionState.Connected) {
     content = <OfflineVideo username={hostName} />;
   } else if (!participant || tracks.length === 0) {
