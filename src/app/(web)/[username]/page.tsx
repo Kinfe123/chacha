@@ -20,6 +20,8 @@ const UserPage = async ({
 
   if (!user || !user.stream) {
     notFound();
+
+    
   }
   // we are looking for if the user in parama is found in our follow relationship
   const isFollowing = await isFollowingUser(user.id);
