@@ -44,7 +44,7 @@ export const Thumbnail = ({
 
   return (
     <div className="border-1 group relative aspect-video cursor-pointer rounded-xl border-[1.2px] border-white/10">
-      <div className="bg-trasnsparent absolute inset-0 flex items-center justify-center rounded-md opacity-0 transition-opacity group-hover:opacity-100" />
+      <div className="bg-trasnsparent absolute inset-0 flex transform items-center justify-center rounded-md  opacity-0 transition-opacity group-hover:scale-90 group-hover:transform group-hover:opacity-100" />
       {content}
       {isLive && src && (
         <div className="absolute left-2 top-2 transition-transform ">
