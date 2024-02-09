@@ -31,11 +31,15 @@ export const ChatForm = ({
   const [isDelayBlocked, setIsDelayBlocked] = useState(false);
 
   const isFollowersOnlyAndNotFollowing = isFollowersOnly && !isFollowing;
+  // disabling the button if the user is blocked by delay or not following or is allowed only for followers or ishidden
   const isDisabled = isHidden || isDelayBlocked || isFollowersOnlyAndNotFollowing;
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     e.stopPropagation();
+
+
+    // this conidtion all depends on the user setting like isDelayed or isfolloweronly and stuff 
 
     if (!value || isDisabled) return;
 
