@@ -84,7 +84,7 @@ export async function POST(req: Request) {
   }
 
   if (eventType === "user.deleted") {
-      await resetIngresses(payload.data.id);
+    await resetIngresses(payload.data.id);
 
     await db.user.delete({
       where: {
