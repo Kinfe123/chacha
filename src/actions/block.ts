@@ -23,7 +23,7 @@ export const onBlock = async (id: string) => {
     // This means user is not in the room
   }
 
-  revalidatePath(`/u/${self.username}/community`);
+  revalidatePath(`/u/${self.username}/jemaw`);
 
   return blockedUser;
 };
@@ -32,6 +32,6 @@ export const onUnblock = async (id: string) => {
   const self = await getSelf();
   const unblockedUser = await unblockUser(id);
 
-  revalidatePath(`/u/${self.username}/community`);
+  revalidatePath(`/u/${self.username}/jemaw`);
   return unblockedUser;
 };

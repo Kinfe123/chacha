@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { 
   Fullscreen,
   KeyRound,
+  DollarSign,
   MessageSquare,
   Users,
 } from "lucide-react";
@@ -33,15 +34,20 @@ export const Navigation = () => {
     },
     {
       label: "Jemaw",
-      href: `/u/${user?.username}/community`,
+      href: `/u/${user?.username}/jemaw`,
       icon: Users,
+    },
+    {
+      label: "Payment Connect",
+      href: `/u/${user?.username}/payment`,
+      icon: DollarSign,
     },
   ];
 
   if (!user?.username) {
     return (
       <ul className="space-y-2">
-        {[...Array(4)].map((_, i) => (
+        {[...Array(5)].map((_, i) => (
           <NavItemSkeleton key={i} />
         ))}
       </ul>

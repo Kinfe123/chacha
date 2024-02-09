@@ -1,73 +1,76 @@
-"use client";
+"use client"
 
-import { useState } from "react";
+import { useState } from "react"
+import {  SendHorizonal } from "lucide-react"
 
-import { cn } from "@/lib/utils";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
-import { SendHorizonal } from "lucide-react"
-import { ChatInfo } from "./talk-info";
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Skeleton } from "@/components/ui/skeleton"
+
+
+import { ChatInfo } from "./talk-info"
+import PaymentModal from "./featured-modal/payment-modal"
 
 interface ChatFormProps {
-  onSubmit: () => void;
-  value: string;
-  onChange: (value: string) => void;
-  isHidden: boolean;
-  isFollowersOnly: boolean;
-  isFollowing: boolean;
-  isDelayed: boolean;
-};
+  onSubmit: () => void
+  value: string
+  onChange: (value: string) => void
+  isHidden: boolean
+  isFollowersOnly: boolean
+  isFollowing: boolean
+  isDelayed: boolean
+  hostName: string
+}
 
 export const ChatForm = ({
   onSubmit,
   value,
   onChange,
+  hostName,
   isHidden,
   isFollowersOnly,
   isFollowing,
   isDelayed,
 }: ChatFormProps) => {
-  const [isDelayBlocked, setIsDelayBlocked] = useState(false);
+  const [isDelayBlocked, setIsDelayBlocked] = useState(false)
+ 
 
-  const isFollowersOnlyAndNotFollowing = isFollowersOnly && !isFollowing;
+  const isFollowersOnlyAndNotFollowing = isFollowersOnly && !isFollowing
   // disabling the button if the user is blocked by delay or not following or is allowed only for followers or ishidden
-  const isDisabled = isHidden || isDelayBlocked || isFollowersOnlyAndNotFollowing;
+  const isDisabled =
+    isHidden || isDelayBlocked || isFollowersOnlyAndNotFollowing
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
+    e.preventDefault()
+    e.stopPropagation()
 
+    // this conidtion all depends on the user setting like isDelayed or isfolloweronly and stuff
 
-    // this conidtion all depends on the user setting like isDelayed or isfolloweronly and stuff 
-
-    if (!value || isDisabled) return;
+    if (!value || isDisabled) return
 
     if (isDelayed && !isDelayBlocked) {
-      setIsDelayBlocked(true);
+      setIsDelayBlocked(true)
       setTimeout(() => {
-        setIsDelayBlocked(false);
-        onSubmit();
-      }, 3000);
+        setIsDelayBlocked(false)
+        onSubmit()
+      }, 3000)
     } else {
-      onSubmit();
+      onSubmit()
     }
   }
 
   if (isHidden) {
-    return null;
+    return null
   }
 
   return (
-    <form 
-      onSubmit={handleSubmit} 
+    <form
+      onSubmit={handleSubmit}
       className="flex flex-col items-center gap-y-4 p-3"
     >
       <div className="w-full">
-        <ChatInfo
-          isDelayed={isDelayed}
-          isFollowersOnly={isFollowersOnly}
-        />
+        <ChatInfo isDelayed={isDelayed} isFollowersOnly={isFollowersOnly} />
         <Input
           onChange={(e) => onChange(e.target.value)}
           value={value}
@@ -80,27 +83,30 @@ export const ChatForm = ({
         />
       </div>
       <div className="ml-auto">
-        <Button
-          type="submit"
-          variant="default"
-          size="sm"
-          disabled={isDisabled}
-        >
-          <SendHorizonal className="w-4 h-4"/>
-        </Button>
+        <div className="flex items-center justify-center gap-x-2">
+         <PaymentModal name={hostName}/>
+          <Button
+            type="submit"
+            variant="default"
+            size="sm"
+            disabled={isDisabled}
+          >
+            <SendHorizonal className="h-4 w-4" />
+          </Button>
+        </div>
       </div>
     </form>
-  );
-};
+  )
+}
 
 export const ChatFormSkeleton = () => {
   return (
     <div className="flex flex-col items-center gap-y-4 p-3">
-      <Skeleton className="w-full h-10" />
-      <div className="flex items-center gap-x-2 ml-auto">
+      <Skeleton className="h-10 w-full" />
+      <div className="ml-auto flex items-center gap-x-2">
         <Skeleton className="h-7 w-7" />
         <Skeleton className="h-7 w-12" />
       </div>
     </div>
-  );
-};
+  )
+}
