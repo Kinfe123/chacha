@@ -32,7 +32,7 @@ export const InfoModal = ({
 }: InfoModalProps) => {
   const router = useRouter();
   const closeRef = useRef<ElementRef<"button">>(null);
-  const [isPending, startTransition] = useTransition();
+const [isPending, startTransition] = useTransition();
 
   const [name, setName] = useState(initialName);
   const [thumbnailUrl, setThumbnailUrl] = useState(initialThumbnailUrl);
@@ -73,7 +73,7 @@ export const InfoModal = ({
           Edit
         </Button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
         <DialogHeader>
           <DialogTitle>
             Edit stream info
