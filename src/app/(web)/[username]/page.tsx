@@ -21,7 +21,7 @@ const UserPage = async ({
   if (!user || !user.stream) {
     notFound();
   }
- // we are looking for if the user in parama is found in our follow relationship
+  // we are looking for if the user in parama is found in our follow relationship
   const isFollowing = await isFollowingUser(user.id);
   const isBlocked = await isBlockedByUser(user.id);
 
@@ -29,17 +29,17 @@ const UserPage = async ({
     notFound();
   }
 
-  return ( 
+  return (
     <div>
-        the user is {user.username  }
-       <Actions userId={user.id} isFollowing={isFollowing}/>
+      {/* the user is {user.username}
+      <Actions userId={user.id} isFollowing={isFollowing} /> */}
+      <StreamPlayer
+        user={user}
+        stream={user.stream}
+        isFollowing={isFollowing}
+      />
     </div>
-    // <StreamPlayer
-    //   user={user}
-    //   stream={user.stream}
-    //   isFollowing={isFollowing}
-    // />
   );
 }
- 
+
 export default UserPage;
