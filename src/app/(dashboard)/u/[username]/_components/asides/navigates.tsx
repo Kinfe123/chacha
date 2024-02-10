@@ -1,20 +1,20 @@
-"use client";
+"use client"
 
-import { useUser } from "@clerk/nextjs";
-import { usePathname } from "next/navigation";
-import { 
+import { usePathname } from "next/navigation"
+import { useUser } from "@clerk/nextjs"
+import {
+  DollarSign,
   Fullscreen,
   KeyRound,
-  DollarSign,
   MessageSquare,
   Users,
-} from "lucide-react";
+} from "lucide-react"
 
-import { NavItem, NavItemSkeleton } from "./items";
+import { NavItem, NavItemSkeleton } from "./items"
 
 export const Navigation = () => {
-  const pathname = usePathname();
-  const { user } = useUser();
+  const pathname = usePathname()
+  const { user } = useUser()
 
   const routes = [
     {
@@ -38,11 +38,11 @@ export const Navigation = () => {
       icon: Users,
     },
     {
-      label: "Payment Connect",
-      href: `/u/${user?.username}/payment`,
+      label: "Payments & Analytics",
+      href: `/u/${user?.username}/payments`,
       icon: DollarSign,
     },
-  ];
+  ]
 
   if (!user?.username) {
     return (
@@ -51,12 +51,12 @@ export const Navigation = () => {
           <NavItemSkeleton key={i} />
         ))}
       </ul>
-    );
+    )
   }
 
   return (
     <ul className="space-y-2 px-2 pt-4 lg:pt-0">
-     {routes.map((route) => (
+      {routes.map((route) => (
         <NavItem
           key={route.href}
           label={route.label}
@@ -64,7 +64,7 @@ export const Navigation = () => {
           href={route.href}
           isActive={pathname === route.href}
         />
-     ))}
+      ))}
     </ul>
-  );
-};
+  )
+}

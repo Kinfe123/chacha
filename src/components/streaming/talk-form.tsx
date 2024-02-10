@@ -1,16 +1,15 @@
 "use client"
 
 import { useState } from "react"
-import {  SendHorizonal } from "lucide-react"
+import { SendHorizonal } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Skeleton } from "@/components/ui/skeleton"
 
-
-import { ChatInfo } from "./talk-info"
 import PaymentModal from "./featured-modal/payment-modal"
+import { ChatInfo } from "./talk-info"
 
 interface ChatFormProps {
   onSubmit: () => void
@@ -34,7 +33,6 @@ export const ChatForm = ({
   isDelayed,
 }: ChatFormProps) => {
   const [isDelayBlocked, setIsDelayBlocked] = useState(false)
- 
 
   const isFollowersOnlyAndNotFollowing = isFollowersOnly && !isFollowing
   // disabling the button if the user is blocked by delay or not following or is allowed only for followers or ishidden
@@ -84,12 +82,12 @@ export const ChatForm = ({
       </div>
       <div className="ml-auto">
         <div className="flex items-center justify-center gap-x-2">
-         <PaymentModal name={hostName}/>
+          <PaymentModal name={hostName} />
           <Button
             type="submit"
             variant="default"
             size="sm"
-            disabled={isDisabled}
+            disabled={isDisabled || value === ""}
           >
             <SendHorizonal className="h-4 w-4" />
           </Button>

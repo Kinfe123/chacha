@@ -30,6 +30,7 @@ export const getUserByUsername = async (username: string) => {
     },
   });
 
+
   return user;
 };
 
