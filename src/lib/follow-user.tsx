@@ -116,7 +116,7 @@ export const followUser = async (id: string) => {
   return follow
 }
 
-export const getFollowerLists = async (id: string) => {
+export const getFollowerLists = async (id: string | undefined) => {
   const self = await getSelf()
   const followers = await db.follow.findMany({
     where: {
@@ -126,7 +126,9 @@ export const getFollowerLists = async (id: string) => {
       follower: true,
     },
   })
-
+  if(!followers) {
+    return []
+  }
   return followers
 }
 
