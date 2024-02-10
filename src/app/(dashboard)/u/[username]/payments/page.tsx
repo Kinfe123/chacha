@@ -7,7 +7,6 @@ import {
   Timer,
 } from "lucide-react"
 
-import { db } from "@/lib/db"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -59,7 +58,7 @@ const Progress = () => {
         </div>
         <div className="flex-1 space-y-4 p-8 pt-6">
           <div className="flex items-center justify-between space-y-2">
-            <h2 className="text-3xl font-bold tracking-tight">
+            <h2 className="font-heading text-3xl font-bold tracking-tight">
               Track Yout Payment
             </h2>
             <div className="flex items-center space-x-2">
@@ -68,7 +67,7 @@ const Progress = () => {
             </div>
           </div>
           <Tabs defaultValue="overview" className="space-y-4 ">
-            <TabsList className=" bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
+            <TabsList className=" bg-neutral-700 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(200,100,210,0.3),rgba(255,255,255,0))]">
               <TabsTrigger value="overview">Overview</TabsTrigger>
               <TabsTrigger value="analytics" disabled>
                 Analytics
@@ -82,7 +81,7 @@ const Progress = () => {
             </TabsList>
             <TabsContent value="overview" className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <Card>
+                <Card className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
                       Total Revenue
@@ -107,7 +106,7 @@ const Progress = () => {
                     </p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
                       Subscriptions
@@ -134,7 +133,7 @@ const Progress = () => {
                     </p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
                       Donations
@@ -160,7 +159,7 @@ const Progress = () => {
                     </p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
                       Active Now
@@ -187,18 +186,20 @@ const Progress = () => {
                 </Card>
               </div>
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-                <Card className="col-span-4">
+                <Card className="col-span-4 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))] ">
                   <CardHeader>
-                    <CardTitle>Overview</CardTitle>
+                    <CardTitle className="font-heading">Overview</CardTitle>
                   </CardHeader>
                   <CardContent className="pl-2">
                     <Overview />
                   </CardContent>
                 </Card>
-                <Card className="col-span-3">
+                <Card className="col-span-3 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
                   <CardHeader>
-                    <CardTitle>Recent Donation</CardTitle>
-                    <CardDescription>
+                    <CardTitle className="font-heading">
+                      Recent Donation
+                    </CardTitle>
+                    <CardDescription className="font-bold">
                       You made 265 donations this month.
                     </CardDescription>
                   </CardHeader>
