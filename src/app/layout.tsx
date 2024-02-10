@@ -1,13 +1,21 @@
 import "@/styles/globals.css"
-import { ClerkProvider } from '@clerk/nextjs'
-import { dark } from '@clerk/themes'
-import { fontSans , fontHeading , fontUrban, fontSubheading } from "../../assets/fonts"
+
 import type { Metadata, Viewport } from "next"
-import {Toaster} from 'sonner'
 import { Inter } from "next/font/google"
+import { ClerkProvider } from "@clerk/nextjs"
+import { dark } from "@clerk/themes"
+import { Toaster } from "sonner"
+
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
+
+import {
+  fontHeading,
+  fontSans,
+  fontSubheading,
+  fontUrban,
+} from "../../assets/fonts"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -67,7 +75,6 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-
     <ClerkProvider appearance={{ baseTheme: dark }}>
       <html lang="en" suppressHydrationWarning>
         <head />
@@ -81,24 +88,24 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSubheading.variable
           )}
         >
-        <div className="hidden dark:block">
-          <div className="absolute  bottom-0 top-0 z-[-2] h-screen overflow-hidden    w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
-
+          <div className="hidden dark:block">
+            <div className="absolute  bottom-0 top-0 z-[-2] h-screen w-full  overflow-hidden bg-transparent bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(180,100,210,0.3),rgba(255,255,255,0))]"></div>
           </div>
-        </div>
-        <div className="block dark:hidden">
-        <div className="absolute top-0 z-[-2] h-screen w-screen rotate-180 transform bg-white bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"></div>
-
-        </div>
+          <div className="block dark:hidden">
+            <div className="absolute top-0 z-[-2] h-screen w-screen rotate-180 transform bg-white bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"></div>
+          </div>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            <Toaster theme="system" position="bottom-right" className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]"/>
+            <Toaster
+              theme="system"
+              position="bottom-right"
+              className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]"
+            />
             {children}
-
           </ThemeProvider>
         </body>
       </html>

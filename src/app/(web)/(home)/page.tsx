@@ -1,19 +1,23 @@
-import { ModeToggle } from "@/components/mode-toggle";
-import { UserButton } from "@clerk/nextjs";
-import { Suspense } from "react";
+import ForFree from "./_components/for-free"
+import GetStarted from "./_components/get-started"
+import Hero from "./_components/hero"
+import World from "./_components/people-around"
 
-import { StreamSkeleton, Streams } from "./_components/StreamLists";
-
-export default function Page() {
+const LandingPage = () => {
   return (
-    <div className="h-full p-8 max-w-screen-2xl mx-auto">
-      <Suspense fallback={<StreamSkeleton />}>
-
-        <div>
-          <Streams />
-        </div>
-
-      </Suspense>
+    <div className="overflow-hidden">
+      <Hero />
+      <div className="relative">
+        <GetStarted />
+      </div>
+      <div className="relative">
+        <World />
+      </div>
+      <div className="mb-0">
+        <ForFree />
+      </div>
     </div>
-  );
-};
+  )
+}
+
+export default LandingPage

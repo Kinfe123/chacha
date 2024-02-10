@@ -18,8 +18,8 @@ export const updateUser = async (values: Partial<User>) => {
     data: { ...validData }
   });
 
-  revalidatePath(`/${self.username}`);
-  revalidatePath(`/u/${self.username}`);
+  revalidatePath(`/streams/${self.username}`);
+  revalidatePath(`/streams/u/${self.username}`);
 
   return user;
 };
