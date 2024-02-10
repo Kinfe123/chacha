@@ -116,6 +116,20 @@ export const followUser = async (id: string) => {
   return follow;
 };
 
+export const getFollowerLists = async (id: string) => {
+  const self = await getSelf()
+  const followers = await db.follow.findMany({
+    where: {
+      followingId: self.id,
+    },
+    include: {
+      follower: true,
+    }
+  })
+
+  return followers;
+
+}
 export const unfollowUser = async (id: string) => {
   const self = await getSelf();
 
