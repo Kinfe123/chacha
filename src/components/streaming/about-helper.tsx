@@ -1,5 +1,7 @@
 "use client"
 
+import Link from "next/link"
+
 import { Button } from "@/components/ui/button"
 import { VerifiedMark } from "@/components/verified-mark"
 
@@ -40,7 +42,7 @@ export const AboutCard = ({
             {followedByCount}
           </span>{" "}
           <Button variant="link" size="sm">
-            {followedByLabel}
+            <Link href={`/u/${hostName}/followers`}>{followedByLabel}</Link>
           </Button>
         </div>
         <p className="text-sm">
