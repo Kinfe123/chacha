@@ -35,8 +35,8 @@ const GetStarted = () => (
         className="flex flex-[0.75] flex-col justify-center"
       >
         {/* <TypingText title="| How Metaversus Works" /> */}
-        <TitleText title={<>Get started with just a few clicks</>} />
-        <div className="mt-[31px] flex max-w-[370px] flex-col gap-[24px]">
+        <TitleText title={<>START ON CHACHA</>} />
+        <div className="mt-[31px] flex max-w-[500px] flex-col gap-[10px]">
           {startingFeatures.map((feature, index) => (
             <StartSteps
               key={feature}
@@ -53,7 +53,8 @@ const GetStarted = () => (
 export default GetStarted
 
 export const startingFeatures = [
-  "Find a world that suits you and you want to enter",
-  "Enter the world by reading basmalah to be safe",
-  "No need to beat around the bush, just stay on the gas and have fun",
+  "Go to the streams page",
+  "Go to creator dashboard nd generate the key",
+  "Put the key on your fav streaming software",
+  "And Yeah , Smash start stream and spark live",
 ]
