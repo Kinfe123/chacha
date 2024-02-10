@@ -30,6 +30,12 @@ const GetStarted = () => (
           className="h-[90%] w-[90%] object-contain"
         />
       </motion.div>
+      <div className="absolute bottom-10 -z-10 flex w-full justify-center">
+        <div className="animate-pulse-slow h-[400px] w-[400px] max-w-full rounded-full bg-gradient-to-tr from-purple-600 to-[#8057e9] opacity-20 blur-[100px]" />
+      </div>
+      {/* <div className="absolute bottom-0 -z-10 flex w-full justify-center">
+        <div className="animate-pulse-slow h-[310px] w-[310px] max-w-full rounded-full bg-[#8678F9] opacity-20 blur-[100px]" />
+      </div> */}
       <motion.div
         variants={fadeIn("left", "tween", 0.2, 1)}
         className="flex flex-[0.75] flex-col justify-center"
