@@ -1,8 +1,9 @@
-"use server";
+"use server"
 
-import { revalidatePath } from "next/cache";
-import { getSelf } from "@/lib/valid-user";
+import { revalidatePath } from "next/cache"
+
 import { blockUser, unblockUser } from "@/lib/blocks"
+import { getSelf } from "@/lib/valid-user"
 
 // const roomService = new RoomServiceClient(
 //   process.env.LIVEKIT_API_URL!,
@@ -11,25 +12,25 @@ import { blockUser, unblockUser } from "@/lib/blocks"
 // );
 
 export const onBlock = async (id: string) => {
-  const self = await getSelf();
+  const self = await getSelf()
 
-  const blockedUser = await blockUser(id);
-  
+  const blockedUser = await blockUser(id)
+
   try {
     // await roomService.removeParticipant(self.id, id);
   } catch {
     // This means user is not in the room
   }
 
-  revalidatePath(`/streams/u/${self.username}/jemaw`);
+  revalidatePath(`/streams/u/${self.username}/jemaw`)
 
-  return blockedUser;
-};
+  return blockedUser
+}
 
 export const onUnblock = async (id: string) => {
-  const self = await getSelf();
-  const unblockedUser = await unblockUser(id);
+  const self = await getSelf()
+  const unblockedUser = await unblockUser(id)
 
-  revalidatePath(`/streams/u/${self.username}/jemaw`);
-  return unblockedUser;
-};
+  revalidatePath(`/u/${self.username}/jemaw`)
+  return unblockedUser
+}

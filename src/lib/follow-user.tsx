@@ -104,12 +104,16 @@ export const followUser = async (id: string) => {
 
   const follow = await db.follow.create({
     data: {
+      // it is the self that is following and it is the other guys who should be in our following lists
       followerId: self.id,
       followingId: otherUser.id,
     },
     include: {
+      // we are returning a the follwing and follower relation with the [] User
       following: true,
       follower: true,
+     
+
     },
   })
 
@@ -155,6 +159,7 @@ export const unfollowUser = async (id: string) => {
       followingId: otherUser.id,
     },
   })
+  // here we havee identified the person to be unfollowd so we need to delete simply 
 
   if (!existingFollow) {
     throw new Error("Not following")
