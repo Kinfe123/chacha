@@ -37,7 +37,7 @@ const PaymentModal = ({ name , disabled }: PaymentModalProps) => {
           <DialogHeader>
             <DialogTitle className="tracking-norrmal font-heading text-xl">
               Donation to
-              <span className="capitalize">{name}</span>
+              <span className="mr-1 capitalize">{name}</span>
             </DialogTitle>
           </DialogHeader>
 
