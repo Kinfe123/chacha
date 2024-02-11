@@ -62,24 +62,27 @@ export const Actions = ({
 
   return (
     <div className="flex">
-      <Button
-        disabled={isPending || isHost}
-        onClick={toggleFollow}
-        variant="default"
-        size="sm"
-        className="w-full lg:w-auto"
-      >
-        {isPending && <Loader className="mr-2 h-3  w-3 animate-spin" />}
-        {!isPending && (
-          <Heart
-            className={cn(
-              "mr-2 h-4 w-4",
-              isFollowing ? "fill-white" : "fill-none"
-            )}
-          />
-        )}
-        {isFollowing ? "Unfollow" : "Follow"}
-      </Button>
+      {!isHost && (
+        <Button
+          disabled={isPending}
+          onClick={toggleFollow}
+          variant="default"
+          size="sm"
+          className="w-full lg:w-auto"
+        >
+          {isPending && <Loader className="mr-2 h-3  w-3 animate-spin" />}
+          {!isPending && (
+            <Heart
+              className={cn(
+                "mr-2 h-4 w-4",
+                isFollowing ? "fill-white" : "fill-none"
+              )}
+            />
+          )}
+          {isFollowing ? "Unfollow" : "Follow"}
+        </Button>
+      )}
+
     </div>
   )
 }

@@ -33,6 +33,7 @@ export const Header = ({
   const participant = useRemoteParticipant(hostIdentity);
 
   const isLive = !!participant;
+  // one from ourself 
   const participantCount = participants.length - 1;
 
   const hostAsViewer = `host-${hostIdentity}`;
