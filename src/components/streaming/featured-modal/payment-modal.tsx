@@ -16,19 +16,20 @@ import {
 import { Hint } from "@/components/hint"
 
 interface PaymentModalProps {
-  name: string
+  name: string,
+  disabled: boolean
 }
 
-const PaymentModal = ({ name }: PaymentModalProps) => {
+const PaymentModal = ({ name , disabled }: PaymentModalProps) => {
   const closeRef = useRef<ElementRef<"button">>(null)
 
   return (
     <div className="flex h-full items-center justify-center">
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant="ghost">
+          <Button variant="ghost" disabled={disabled}>
             <Hint label="Donate" asChild>
-              <DollarSign className="h-4 w-4 " />
+              <DollarSign className="h-4 w-4 "  />
             </Hint>
           </Button>
         </DialogTrigger>
