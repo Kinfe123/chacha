@@ -82,7 +82,7 @@ export const ChatForm = ({
       </div>
       <div className="ml-auto">
         <div className="flex items-center justify-center gap-x-2">
-          <PaymentModal name={hostName} />
+          <PaymentModal name={hostName} disabled={isDisabled}/>
           <Button
             type="submit"
             variant="default"
