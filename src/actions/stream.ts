@@ -36,9 +36,9 @@ export const updateStream = async (values: Partial<Stream>) => {
       },
     })
 
-    revalidatePath(`/u/${self.username}/chat`)
-    revalidatePath(`/u/${self.username}`)
-    revalidatePath(`/${self.username}`)
+    revalidatePath(`/streams/u/${self.username}/chat`)
+    revalidatePath(`/streams/u/${self.username}`)
+    revalidatePath(`/streams/${self.username}`)
 
     return stream
   } catch (err) {
