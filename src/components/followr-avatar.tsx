@@ -1,11 +1,14 @@
 "use client"
 
-import { useTransition } from "react"
+import { useEffect, useState, useTransition } from "react"
 import { useRouter } from "next/navigation"
 import { onFollow, onUnfollow } from "@/actions/follow"
 import { useAuth } from "@clerk/nextjs"
+import { Loader } from "lucide-react"
 import { toast } from "sonner"
 
+import { isFollowingUser } from "@/lib/follow-user"
+import { getUserByUsername } from "@/lib/user-helper"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle } from "@/components/ui/card"
@@ -14,19 +17,20 @@ interface FollowerListProos {
   imgUrl: string
   username: string
   followId: string
-  isFollowing: boolean
+  isFollowing?: boolean
 }
 
 export function FollowrAvatar({
   username,
   imgUrl,
   followId,
-  isFollowing,
+  // isFollowing,
 }: FollowerListProos) {
   const [isPending, startTransition] = useTransition()
 
   const { userId } = useAuth()
   const router = useRouter()
+  const [isFollow, setIsFollow] = useState<boolean>(false)
   const handleFollow = () => {
     startTransition(() => {
       onFollow(followId)
@@ -51,13 +55,24 @@ export function FollowrAvatar({
       return router.push("/sign-in")
     }
 
-    if (isFollowing) {
+    if (isFollow) {
       handleUnfollow()
     } else {
       handleFollow()
     }
   }
 
+  const handleUpdates = async () => {
+    const res = await getUserByUsername(username)
+    const isFollowing = await isFollowingUser(res?.id)
+    setIsFollow(isFollowing)
+  }
+  useEffect(() => {
+    handleUpdates()
+  }, [isPending])
+  useEffect(() => {
+    handleUpdates()
+  }, [])
   return (
     <Card className="flex w-fit items-center justify-between bg-transparent">
       <CardHeader className="grid gap-1 p-4">
@@ -71,7 +86,8 @@ export function FollowrAvatar({
           <div className="ml-4 flex flex-col md:flex-col">
             <CardTitle className="text-base">@{username}</CardTitle>
             <Button className="mt-2 md:mt-0" size="sm" onClick={toggleFollow}>
-              {isFollowing ? "UnFollow" : "Follow"}
+              {isPending && <Loader className="mr-2 h-3  w-3 animate-spin" />}
+              {isFollow ? "UnFollow" : "Follow"}
             </Button>
           </div>
         </div>

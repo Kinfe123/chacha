@@ -26,7 +26,7 @@ const FollowerPage = async ({ params }: FollowerPageProps) => {
         {followers.map((follow) => {
           return (
             <FollowrAvatar key={follow.follower.id}  imgUrl={follow.follower.imageUrl}
-              username={follow.follower.username} followId={follow.follower.id} isFollowing={isFollowing}/>
+              username={follow.follower.username} followId={follow.follower.id} />
             // <UserAvatar
             //   key={follow.follower.externalUserId}
             //   imageUrl={follow.follower.imageUrl}

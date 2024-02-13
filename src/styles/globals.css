@@ -184,6 +184,7 @@ body,
 
   body {
     @apply bg-neutral-950 text-foreground;
+    @apply bg-fixed
   }
 }
 
