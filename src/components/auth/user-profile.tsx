@@ -23,7 +23,8 @@ export function UserProfile() {
   const { theme } = useTheme()
 
   return (
-    <ClerkUserProfile
+    <ClerkUserProfile 
+    
       appearance={{
         ...appearance,
         baseTheme: theme === "dark" ? dark : appearance.baseTheme,

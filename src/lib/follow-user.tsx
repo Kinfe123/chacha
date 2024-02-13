@@ -76,6 +76,37 @@ export const isFollowingUser = async (id: string | undefined) => {
   }
 }
 
+export const meFollowing = async (id: string | undefined) => {
+  try {
+    const self = await getSelf()
+
+    const otherUser = await db.user.findUnique({
+      where: { id },
+    })
+
+    if (!otherUser) {
+      throw new Error("User not found")
+    }
+
+    if (otherUser.id === self.id) {
+      return true
+    }
+
+    const existingFollow = await db.follow.findFirst({
+      where: {
+        followerId: otherUser.id,
+        followingId: self.id,
+      },
+    })
+
+    return !!existingFollow
+  } catch {
+    return false
+  }
+}
+
+
+
 export const followUser = async (id: string) => {
   const self = await getSelf()
 
@@ -112,7 +143,7 @@ export const followUser = async (id: string) => {
       // we are returning a the follwing and follower relation with the [] User
       following: true,
       follower: true,
-     
+
 
     },
   })
@@ -130,7 +161,7 @@ export const getFollowerLists = async (id: string | undefined) => {
       follower: true,
     },
   })
-  if(!followers) {
+  if (!followers) {
     return []
   }
   return followers
