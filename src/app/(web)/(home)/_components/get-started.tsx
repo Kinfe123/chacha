@@ -11,7 +11,7 @@ import styles from "./styles"
 
 const GetStarted = () => (
   <section
-    className={`${styles.paddings}  relative z-10  mx-10 rounded-t-3xl bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(90,90,100,0.5),rgba(255,255,255,0))] `}
+    className={`${styles.paddings}  relative z-10  mx-10 rounded-t-3xl  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(192,132,252,0.5),rgba(255,255,255,0))] `}
   >
     <motion.div
       //   variants={staggerContainer}
@@ -30,9 +30,9 @@ const GetStarted = () => (
           className="h-[90%] w-[90%] object-contain"
         />
       </motion.div>
-      <div className="absolute bottom-10 -z-10 flex w-full justify-center">
+      {/* <div className="absolute bottom-10 -z-10 flex w-full justify-center">
         <div className="animate-pulse-slow h-[400px] w-[400px] max-w-full rounded-full bg-gradient-to-tr from-purple-600 to-[#8057e9] opacity-20 blur-[100px]" />
-      </div>
+      </div> */}
       {/* <div className="absolute bottom-0 -z-10 flex w-full justify-center">
         <div className="animate-pulse-slow h-[310px] w-[310px] max-w-full rounded-full bg-[#8678F9] opacity-20 blur-[100px]" />
       </div> */}
@@ -60,7 +60,7 @@ export default GetStarted
 
 export const startingFeatures = [
   "Go to the streams page",
-  "Go to creator dashboard nd generate the key",
+  "Go to creator dashboard and generate the key",
   "Put the key on your fav streaming software",
   "And Yeah , Smash start stream and spark live",
 ]

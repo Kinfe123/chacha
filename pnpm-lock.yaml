@@ -11,6 +11,9 @@ dependencies:
   '@clerk/themes':
     specifier: ^1.7.9
     version: 1.7.9(react@18.2.0)
+  '@clerk/types':
+    specifier: ^3.62.0
+    version: 3.62.0
   '@livekit/components-react':
     specifier: ^1.4.2
     version: 1.5.3(livekit-client@1.15.11)(react-dom@18.2.0)(react@18.2.0)(tslib@2.6.2)
@@ -474,6 +477,13 @@ packages:
 
   /@clerk/types@3.61.0:
     resolution: {integrity: sha512-MOVBROPWEtKNX4zcPVTJK0ZhfENYQ6rFHeR0E8XIZ4s0fX5juziH1e+FTBHM0Fda9GvsEPyyBgsZoGwHQPy45w==}
+    engines: {node: '>=14'}
+    dependencies:
+      csstype: 3.1.1
+    dev: false
+
+  /@clerk/types@3.62.0:
+    resolution: {integrity: sha512-rjtdPqNJtfayCrqOCi20i46rw7X5yzAiOoh0Dzl7KX8kdBWQn06UxpgREPEp/3gFS2imVFRyXtx+fUGRwOGjaw==}
     engines: {node: '>=14'}
     dependencies:
       csstype: 3.1.1

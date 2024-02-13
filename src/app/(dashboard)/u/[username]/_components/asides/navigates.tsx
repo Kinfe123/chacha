@@ -7,6 +7,7 @@ import {
   Fullscreen,
   KeyRound,
   MessageSquare,
+  Settings,
   Users,
 } from "lucide-react"
 
@@ -41,6 +42,11 @@ export const Navigation = () => {
       label: "Payments & Analytics",
       href: `/u/${user?.username}/payments`,
       icon: DollarSign,
+    },
+    {
+      label: "Setting",
+      href: `/u/${user?.username}/setting`,
+      icon: Settings,
     },
   ]
 
