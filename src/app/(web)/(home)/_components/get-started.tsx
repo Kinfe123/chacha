@@ -60,7 +60,7 @@ export default GetStarted
 
 export const startingFeatures = [
   "Go to the streams page",
-  "Go to creator dashboard nd generate the key",
+  "Go to creator dashboard and generate the key",
   "Put the key on your fav streaming software",
   "And Yeah , Smash start stream and spark live",
 ]
