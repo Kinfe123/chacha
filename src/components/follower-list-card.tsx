@@ -2,10 +2,11 @@
 
 import { useEffect, useState, useTransition } from "react"
 import { useRouter } from "next/navigation"
-import { onFollow, onUnfollow } from "@/actions/follow"
+import { onFollow, onMeFollow, onUnfollow } from "@/actions/follow"
 import { useAuth } from "@clerk/nextjs"
 import { Loader } from "lucide-react"
 import { toast } from "sonner"
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle } from "@/components/ui/card"
@@ -30,11 +31,11 @@ export function FollowrAvatar({
   const [isFollow, setIsFollow] = useState<boolean>(false)
   const handleFollow = () => {
     startTransition(() => {
-      onFollow(followId)
+      onMeFollow(followId)
         .then((data) =>
           toast.success(`You are now following ${data.following.username}`)
         )
-        .catch(() => toast.error("Something went wrong"))
+        .catch((err) => console.log("ERROR: ", err))
     })
   }
 

@@ -105,8 +105,47 @@ export const meFollowing = async (id: string | undefined) => {
   }
 }
 
+export const mefollowUser = async (id: string) => {
+  const self = await getSelf()
 
+  const otherUser = await db.user.findUnique({
+    where: { id },
+  })
 
+  if (!otherUser) {
+    throw new Error("User not found")
+  }
+
+  if (otherUser.id === self.id) {
+    throw new Error("Cannot follow yourself")
+  }
+
+  const existingFollow = await db.follow.findFirst({
+    where: {
+      followerId: id,
+      followingId: self.id,
+    },
+  })
+
+  if (existingFollow) {
+    throw new Error("Already following")
+  }
+
+  const follow = await db.follow.create({
+    data: {
+      // it is the self that is following and it is the other guys who should be in our following lists
+      followerId: id,
+      followingId: self.id,
+    },
+    include: {
+      // we are returning a the follwing and follower relation with the [] User
+      following: true,
+      follower: true,
+    },
+  })
+
+  return follow
+}
 export const followUser = async (id: string) => {
   const self = await getSelf()
 
@@ -143,8 +182,6 @@ export const followUser = async (id: string) => {
       // we are returning a the follwing and follower relation with the [] User
       following: true,
       follower: true,
-
-
     },
   })
 
@@ -190,7 +227,7 @@ export const unfollowUser = async (id: string) => {
       followingId: otherUser.id,
     },
   })
-  // here we havee identified the person to be unfollowd so we need to delete simply 
+  // here we havee identified the person to be unfollowd so we need to delete simply
 
   if (!existingFollow) {
     throw new Error("Not following")

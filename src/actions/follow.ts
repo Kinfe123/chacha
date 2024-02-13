@@ -4,12 +4,30 @@ import { revalidatePath } from "next/cache";
 
 import { 
   followUser, 
+  meFollowing, 
+  mefollowUser,
   unfollowUser
 } from "@/lib/follow-user";
 
 export const onFollow = async (id: string) => {
   try {
     const followedUser = await followUser(id);
+
+    revalidatePath("/");
+
+    if (followedUser) {
+      revalidatePath(`/${followedUser.following.username}`);
+      revalidatePath(`/${followedUser.following.username}/followers`);
+    }
+
+    return followedUser;
+  } catch (error) {
+    throw new Error("Interal Error");
+  };
+};
+export const onMeFollow = async (id: string) => {
+  try {
+    const followedUser = await mefollowUser(id);
 
     revalidatePath("/");
 
