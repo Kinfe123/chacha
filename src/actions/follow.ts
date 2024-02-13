@@ -32,7 +32,7 @@ export const onUnfollow = async (id: string) => {
 
     if (unfollowedUser) {
       revalidatePath(`/${unfollowedUser.following.username}`)
-      revalidatePath(`/${followedUser.following.username}/followers`);
+      revalidatePath(`/${unfollowedUser.following.username}/followers`);
       revalidatePath(`/${unfollowedUser.following.username}`)
     }
 
