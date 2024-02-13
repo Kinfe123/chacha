@@ -19,14 +19,14 @@ const FollowerPage = async ({ params }: FollowerPageProps) => {
 
   const followers = await getFollowerLists(user?.id)
   const isFollowing = await isFollowingUser(user?.id)
-
+  
   return (
     <div className="p-10">
       <div className="flex items-center gap-x-4">
         {followers.map((follow) => {
           return (
             <FollowrAvatar key={follow.follower.id}  imgUrl={follow.follower.imageUrl}
-              username={follow.follower.username} followId={follow.followerId} isFollowing={isFollowing}/>
+              username={follow.follower.username} followId={follow.follower.id} isFollowing={isFollowing}/>
             // <UserAvatar
             //   key={follow.follower.externalUserId}
             //   imageUrl={follow.follower.imageUrl}

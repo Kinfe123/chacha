@@ -24,6 +24,7 @@ export function FollowrAvatar({
   isFollowing,
 }: FollowerListProos) {
   const [isPending, startTransition] = useTransition()
+
   const { userId } = useAuth()
   const router = useRouter()
   const handleFollow = () => {
@@ -61,14 +62,16 @@ export function FollowrAvatar({
     <Card className="flex w-fit items-center justify-between bg-transparent">
       <CardHeader className="grid gap-1 p-4">
         <div className="flex items-center">
-          <Avatar className="aspect-square h-10 w-10">
-            <AvatarImage alt="@shadcn" src={imgUrl} />
-            <AvatarFallback>AC</AvatarFallback>
+          <Avatar className="">
+            <AvatarImage className="object-cover" alt={username} src={imgUrl} />
+            <AvatarFallback>
+              {username[0] + username[username.length - 1]}
+            </AvatarFallback>
           </Avatar>
           <div className="ml-4 flex flex-col md:flex-col">
             <CardTitle className="text-base">@{username}</CardTitle>
-            <Button className="mt-2 md:mt-0" size="sm"  onClick={toggleFollow}>
-              {isFollowing ? 'UnFollow' : "Follow"}
+            <Button className="mt-2 md:mt-0" size="sm" onClick={toggleFollow}>
+              {isFollowing ? "UnFollow" : "Follow"}
             </Button>
           </div>
         </div>
