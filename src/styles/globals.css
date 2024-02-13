@@ -186,3 +186,9 @@ body,
     @apply bg-neutral-950 text-foreground;
   }
 }
+
+:root {
+  --gold: #c084fc;
+  --light-shadow: #fbcfe8;
+  --dark-shadow: #fbcfe8;
+}
