@@ -36,7 +36,7 @@ export const onUnfollow = async (id: string) => {
       revalidatePath(`/${unfollowedUser.following.username}`)
     }
 
-    return unfollowedUser;
+  return unfollowedUser;
   } catch (error) {
     throw new Error("Internal Error");
   }

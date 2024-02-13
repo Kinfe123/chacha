@@ -76,7 +76,7 @@ export const isFollowingUser = async (id: string | undefined) => {
   }
 }
 
-export const isFollowing = async (id: string | undefined) => {
+export const meFollowing = async (id: string | undefined) => {
   try {
     const self = await getSelf()
 
@@ -94,8 +94,8 @@ export const isFollowing = async (id: string | undefined) => {
 
     const existingFollow = await db.follow.findFirst({
       where: {
-        followerId: self.id,
-        followingId: otherUser.id,
+        followerId: otherUser.id,
+        followingId: self.id,
       },
     })
 
@@ -143,7 +143,7 @@ export const followUser = async (id: string) => {
       // we are returning a the follwing and follower relation with the [] User
       following: true,
       follower: true,
-     
+
 
     },
   })
@@ -161,7 +161,7 @@ export const getFollowerLists = async (id: string | undefined) => {
       follower: true,
     },
   })
-  if(!followers) {
+  if (!followers) {
     return []
   }
   return followers
