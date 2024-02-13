@@ -17,7 +17,7 @@ const FollowerAvater = async ({
 }: FollowerListProos) => {
   const followUser = await getUserByUsername(username)
   const isFollowing = await meFollowing(followUser?.id)
-  console.log(isFollowing)
+ 
   return (
     <>
       <FollowrAvatar
