@@ -47,7 +47,7 @@ export const getFollowedUsers = async () => {
   }
 }
 
-export const isFollowingUser = async (id: string) => {
+export const isFollowingUser = async (id: string | undefined) => {
   try {
     const self = await getSelf()
 
