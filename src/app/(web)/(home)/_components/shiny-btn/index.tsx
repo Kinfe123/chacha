@@ -4,9 +4,13 @@ import styles from "./shiny.module.css"
 
 const Shiny = () => {
   return (
-    <button className={styles.btn}>
-      <Link href='/streams'>Start Now</Link>
-    </button>
+    <Link href={'/streams'}>
+      <button className={styles.btn}>
+        Start Cooking
+
+      </button>
+    </Link>
+
   )
 }
 

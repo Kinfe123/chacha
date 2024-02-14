@@ -2,21 +2,29 @@ import { getSelf } from "@/lib/valid-user"
 import { getStreamByUserId } from "@/lib/stream";
 
 import { ToggleCard } from "./_components/toogly-chat";
+import { PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/page-header";
 
 const ChatPage = async () => {
   const self = await getSelf();
-  
-  const stream = await getStreamByUserId(self.id);  
+
+  const stream = await getStreamByUserId(self.id);
   if (!stream) {
     throw new Error("Stream not found");
   }
 
-  return ( 
+  return (
     <div className="p-10">
       <div className="mb-4">
-        <h1 className="text-3xl font-heading font-bold">
-          Chat settings
-        </h1>
+        <PageHeader
+          id="account-header"
+          aria-labelledby="account-header-heading"
+          separated
+        >
+          <PageHeaderHeading size="sm" className="font-heading tracking-normal">Chat Setting</PageHeaderHeading>
+          <PageHeaderDescription size="sm">
+            Manage your chat settings
+          </PageHeaderDescription>
+        </PageHeader>
       </div>
       <div className="space-y-4">
         <ToggleCard
@@ -38,5 +46,5 @@ const ChatPage = async () => {
     </div>
   );
 };
- 
+
 export default ChatPage;

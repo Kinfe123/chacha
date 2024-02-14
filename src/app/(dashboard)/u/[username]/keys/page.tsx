@@ -4,6 +4,7 @@ import { getStreamByUserId } from "@/lib/stream";
 import { UrlCard } from "./_components/url-feild";
 import { KeyCard } from "./_components/stream-key-gen-card";
 import { ConnectModal } from "./_components/dailog-key";
+import { PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/page-header";
 
 const KeysPage = async () => {
   const self = await getSelf();
@@ -13,12 +14,19 @@ const KeysPage = async () => {
     throw new Error("Stream not found");
   }
 
-  return ( 
+  return (
     <div className="p-6">
       <div className="flex items-center justify-between mb-4">
-        <h1 className="text-2xl font-bold">
-          Connection and Keys
-        </h1>
+        <PageHeader
+          id="account-header"
+          aria-labelledby="account-header-heading"
+          separated
+        >
+          <PageHeaderHeading size="sm" className="font-heading tracking-normal">Connecting Key</PageHeaderHeading>
+          <PageHeaderDescription size="sm">
+            Create a connecting key to get started
+          </PageHeaderDescription>
+        </PageHeader>
         <ConnectModal />
       </div>
       <div className="space-y-4">
@@ -28,5 +36,5 @@ const KeysPage = async () => {
     </div>
   )
 };
- 
+
 export default KeysPage;

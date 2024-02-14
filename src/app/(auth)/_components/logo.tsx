@@ -7,16 +7,16 @@ export const Logo = () => {
   return (
     <div className="flex flex-col items-center font-heading gap-y-4">
       <div className="bg-white rounded-full p-1">
-        <Image
+        {/* <Image
           src="/spooky.svg"
           alt="Gamehub"
           height="80"
           width="80"
-        />
+        /> */}
       </div>
       <div className={cn(
         "flex flex-col items-center",
-      
+
       )}>
         <p className="text-4xl font-semibold">
           Cha-Cha

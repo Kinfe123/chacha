@@ -28,7 +28,6 @@ export const metadata = {
 }
 
 const Progress = () => {
-  const uncompleted = 10
 
   return (
     <>

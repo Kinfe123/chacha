@@ -9,7 +9,7 @@ export const Logo = () => {
     <Link href="/">
       <div className="flex items-center gap-3 gap-y-4 px-3 py-2 font-heading">
         <div className="rounded-full bg-white p-1">
-          <Image src="/spooky.svg" alt="Gamehub" height="40" width="40" />
+          {/* <Image src="/spooky.svg" alt="Gamehub" height="40" width="40" /> */}
         </div>
         <div className={cn("flex items-center")}>
           <p className="text-3xl font-semibold">Cha-Cha</p>
