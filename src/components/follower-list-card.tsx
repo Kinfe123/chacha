@@ -10,6 +10,7 @@ import { toast } from "sonner"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle } from "@/components/ui/card"
+import { onMeUnfollow } from "@/lib/follow-user"
 
 interface FollowerListProos {
   imgUrl: string
@@ -41,7 +42,7 @@ export function FollowrAvatar({
 
   const handleUnfollow = () => {
     startTransition(() => {
-      onUnfollow(followId)
+      onMeUnfollow(followId)
         .then((data) =>
           toast.success(`You have unfollowed ${data.follower.username}`)
         )
