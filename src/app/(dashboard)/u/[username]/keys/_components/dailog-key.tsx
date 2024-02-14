@@ -33,7 +33,10 @@ const WHIP = String(IngressInput.WHIP_INPUT);
 
 
 type IngressType = typeof RTMP | typeof WHIP;
-
+type ObjDescription = {
+  '0': string,
+  '1': string,
+}
 export const ConnectModal = () => {
   const closeRef = useRef<ElementRef<"button">>(null);
   const [isPending, startTransition] = useTransition();
@@ -49,13 +52,13 @@ export const ConnectModal = () => {
         .catch((err) => toast.error("Something went wrong " + err));
     });
   }
-  const objectDescption = {
-    0: 'RTMP - It is a unique web address that carries your live video stream every time you broadcast.',
-    1: 'WHIP - It simplifies media ingestion, making it easier for software and hardware encoders to support WebRTC Also supports HTTPS.'
-  }
+  const objectDescption = [
+    'RTMP - It is a unique web address that carries your live video stream every time you broadcast.',
+    'WHIP - It simplifies media ingestion, making it easier for software and hardware encoders to support WebRTC Also supports HTTPS.'
+  ]
 
 
-  console.log("The ingress type is: ", ingressType)
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -86,7 +89,7 @@ export const ConnectModal = () => {
           <Terminal className="h-4 w-4" />
           <AlertTitle className="font-bold">Info</AlertTitle>
           <AlertDescription>
-            {objectDescption[ingressType]}
+            {objectDescption[parseInt(ingressType)]}
           </AlertDescription>
         </Alert>
         <Alert>
