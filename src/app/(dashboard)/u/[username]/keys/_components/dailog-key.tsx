@@ -33,10 +33,7 @@ const WHIP = String(IngressInput.WHIP_INPUT);
 
 
 type IngressType = typeof RTMP | typeof WHIP;
-type ObjDescription = {
-  '0': string,
-  '1': string,
-}
+
 export const ConnectModal = () => {
   const closeRef = useRef<ElementRef<"button">>(null);
   const [isPending, startTransition] = useTransition();
