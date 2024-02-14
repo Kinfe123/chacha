@@ -2,7 +2,7 @@
 
 import { toast } from "sonner";
 import { useState, useTransition, useRef, ElementRef } from "react";
-import { AlertTriangle } from "lucide-react";
+import { AlertTriangle, Terminal } from "lucide-react";
 import { IngressInput } from "livekit-server-sdk";
 import { Loader } from "lucide-react";
 import { createIngress } from "@/actions/ingress";
@@ -49,9 +49,13 @@ export const ConnectModal = () => {
         .catch((err) => toast.error("Something went wrong " + err));
     });
   }
+  const objectDescption = {
+    0: 'RTMP - It is a unique web address that carries your live video stream every time you broadcast.',
+    1: 'WHIP - It simplifies media ingestion, making it easier for software and hardware encoders to support WebRTC Also supports HTTPS.'
+  }
 
 
-  console.log("The ingress type is: " , ingressType)
+  console.log("The ingress type is: ", ingressType)
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -59,7 +63,7 @@ export const ConnectModal = () => {
           Pop a connection string
         </Button>
       </DialogTrigger>
-      <DialogContent  className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
+      <DialogContent className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
         <DialogHeader>
           <DialogTitle className="font-heading tracking-norrmal text-xl">Generating Connection String</DialogTitle>
         </DialogHeader>
@@ -72,10 +76,19 @@ export const ConnectModal = () => {
             <SelectValue placeholder="Ingress Type" />
           </SelectTrigger>
           <SelectContent>
+
             <SelectItem value={RTMP}>RTMP</SelectItem>
             <SelectItem value={WHIP}>WHIP</SelectItem>
           </SelectContent>
         </Select>
+
+        <Alert>
+          <Terminal className="h-4 w-4" />
+          <AlertTitle className="font-bold">Info</AlertTitle>
+          <AlertDescription>
+            {objectDescption[ingressType]}
+          </AlertDescription>
+        </Alert>
         <Alert>
           <AlertTriangle className="h-4 w-4" />
           <AlertTitle>Warning!</AlertTitle>
@@ -94,7 +107,7 @@ export const ConnectModal = () => {
             onClick={onSubmit}
             variant="default"
           >
-            {isPending ? <Loader className='animate-spin w-4 h-4 mr-2' />: ""}
+            {isPending ? <Loader className='animate-spin w-4 h-4 mr-2' /> : ""}
             Generate
           </Button>
         </div>

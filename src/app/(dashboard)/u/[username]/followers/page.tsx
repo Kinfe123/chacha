@@ -6,6 +6,7 @@ import {
 import { getUserByUsername } from "@/lib/user-helper"
 import { getSelf } from "@/lib/valid-user"
 import FollowerAvater from "@/components/followr-avatar"
+import { PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/page-header"
 
 interface FollowerPageProps {
   params: {
@@ -20,11 +21,22 @@ const FollowerPage = async ({ params }: FollowerPageProps) => {
 
   const followers = await getFollowerLists(user?.id)
   const isFollowing = await meFollowing(user?.id)
- 
+
 
   return (
     <div className="p-10">
-      <div className="flex items-center gap-x-4">
+
+      <PageHeader
+        id="account-header"
+        aria-labelledby="account-header-heading"
+        separated
+      >
+        <PageHeaderHeading size="sm" className="font-heading tracking-normal">Followers</PageHeaderHeading>
+        <PageHeaderDescription size="sm">
+          Manage your followers
+        </PageHeaderDescription>
+      </PageHeader>
+      <div className="flex items-center gap-x-4 mt-10">
         {followers.map((follow) => {
           return (
             <FollowerAvater
