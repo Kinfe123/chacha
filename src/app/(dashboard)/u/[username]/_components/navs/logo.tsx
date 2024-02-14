@@ -24,7 +24,7 @@ export const Logo = () => {
             ChaCha
           </p>
           <p className="text-xs text-muted-foreground">
-            Creator Hub
+            Cook Something
           </p>
         </div>
       </div>

@@ -226,6 +226,7 @@ export const unfollowUser = async (id: string) => {
       followerId: self.id,
       followingId: otherUser.id,
     },
+
   })
   // here we havee identified the person to be unfollowd so we need to delete simply
 
@@ -239,6 +240,7 @@ export const unfollowUser = async (id: string) => {
     },
     include: {
       following: true,
+      follower: true,
     },
   })
 
