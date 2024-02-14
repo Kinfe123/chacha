@@ -33,7 +33,7 @@ export function FollowrAvatar({
     startTransition(() => {
       onMeFollow(followId)
         .then((data) =>
-          toast.success(`You are now following ${data.following.username}`)
+          toast.success(`You are now following ${data.follower.username}`)
         )
         .catch((err) => console.log("ERROR: ", err))
     })
@@ -43,7 +43,7 @@ export function FollowrAvatar({
     startTransition(() => {
       onUnfollow(followId)
         .then((data) =>
-          toast.success(`You have unfollowed ${data.following.username}`)
+          toast.success(`You have unfollowed ${data.follower.username}`)
         )
         .catch(() => toast.error("Something went wrong"))
     })
