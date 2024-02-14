@@ -4,6 +4,7 @@ import { getBlockedUsers } from "@/lib/blocks";
 
 import { DataTable } from "./_components/data-table";
 import { columns } from "./_components/columns";
+import { PageHeader  ,PageHeaderDescription , PageHeaderHeading} from "@/components/page-header";
 
 const CommunityPage = async () => {
   const blockedUsers = await getBlockedUsers();
@@ -19,9 +20,16 @@ const CommunityPage = async () => {
   return ( 
     <div className="p-6">
       <div className="mb-4">
-        <h1 className="text-2xl font-bold">
-          Jemaw Settings
-        </h1>
+         <PageHeader
+          id="account-header"
+          aria-labelledby="account-header-heading"
+          separated
+        >
+          <PageHeaderHeading size="sm" className="font-heading tracking-normal">Jemaw Setting</PageHeaderHeading>
+          <PageHeaderDescription size="sm">
+            Manage Jemaw here
+          </PageHeaderDescription>
+        </PageHeader>
       </div>
       <DataTable columns={columns} data={formattedData} />
     </div>
