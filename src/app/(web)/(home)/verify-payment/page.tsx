@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { TransactionComplete } from "@/components/transaction-complete";
 // import { useRouter } from "next/router";
 
 type TxnProps = {
@@ -41,9 +42,7 @@ const VarifyChapa = ({searchParams}:TxnProps) => {
     return (
         <>
             <div className="row align-items-center" >
-                <div className="col-lg-12 col-md-12">
-                    <h3>{JSON.stringify(data)}</h3>
-                </div>
+                <TransactionComplete />
             </div>
         </>
     );

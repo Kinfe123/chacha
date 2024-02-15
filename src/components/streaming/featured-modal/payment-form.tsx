@@ -102,7 +102,7 @@ export function PaymentForm({ username }: { username: string }) {
                 }
             }
 
-            const response = await axios.post(`/api/chapa`, JSON.stringify(body), header);
+            const response = await axios.post(`/api/chapa`,body, header);
             if (response.data) {
 
                 toast.success("YOu have submitted well!")
