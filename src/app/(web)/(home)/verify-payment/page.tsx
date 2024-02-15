@@ -1,6 +1,5 @@
-'use client'
+// @ts-nocheck
 
-import { useEffect, useState } from "react";
 import axios from "axios";
 import { TransactionComplete } from "@/components/transaction-complete";
 // import { useRouter } from "next/router";
@@ -14,35 +13,24 @@ type TxnProps = {
 
     }
 }
-const VarifyChapa = ({searchParams}:TxnProps) => {
-    const {tnx_ref: tnx_ref} = searchParams
+const VarifyChapa = async ({ searchParams }: TxnProps) => {
+    const { tnx_ref: tnx_ref } = searchParams
+    let result = {}
     // const router = useRouter();
-  
-    const [data, setData] = useState({})
-
-    useEffect(() => {
-        const confirmPayment = async () => {
-            try {
-              ;
-                // const url = `http://localhost:3000/api/verify`;
-                const header = {
-                    headers: { "Content-Type": "application/json" },
-                };
-                const data = { tnx_ref: tnx_ref };
-                let response = await axios.post('/api/verify', data, header);
-                setData(response.data);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-
-        confirmPayment();
-    }, [tnx_ref]);
+    const header = {
+        headers: { "Content-Type": "application/json" },
+    };
+    const data = { tnx_ref: tnx_ref };
+    let response = await axios.post(`${process.env.NEXT_PUBLIC_APP_URL}/api/verify`, data, header);
+    console.log('THe value is: ', response.data.data)
+    const res = response.data.data
 
     return (
         <>
             <div className="row align-items-center" >
-                <TransactionComplete />
+
+                <TransactionComplete first_name={res.first_name} last_name={res.last_name} email={res.email} tnx_ref={res.reference} amount={res.amount} created_at={res.created_at} />
+
             </div>
         </>
     );

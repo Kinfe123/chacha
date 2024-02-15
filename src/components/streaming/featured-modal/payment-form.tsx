@@ -105,7 +105,7 @@ export function PaymentForm({ username }: { username: string }) {
             const response = await axios.post(`/api/chapa`,body, header);
             if (response.data) {
 
-                toast.success("YOu have submitted well!")
+                toast.success("You have succesfully perform the transaction!")
             } else {
                 toast.error("Failed to make the transactions")
             }

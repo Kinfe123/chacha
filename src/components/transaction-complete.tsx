@@ -1,24 +1,39 @@
+// @ts-nocheck
 
+
+import { formatDate } from "@/lib/utils"
 import Link from "next/link"
 
-export function TransactionComplete() {
+
+type TransactionCompleteProps = {
+  first_name: string,
+  last_name: string,
+  amount: string,
+  email: string,
+  tnx_ref: string,
+  created_at: Date
+
+}
+export function TransactionComplete({ first_name, last_name, email, amount, tnx_ref, created_at }: TransactionCompleteProps) {
   return (
     <div className="flex flex-col items-center gap-4 p-4">
-      <CheckIcon className="h-20 w-20 text-green-500" />
+      <CheckIcon className="h-20 w-20 text-purple-400/50" />
       <div className="text-center space-y-2">
-        <h1 className="text-3xl font-bold">Transaction Successful</h1>
+        <h1 className="text-3xl font-bold font-heading md:text-5xl">Transaction Successful</h1>
         <p className="mx-auto max-w-[400px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-          Thank you for your purchase. Your order will be processed and shipped within 2 business days.
+          Thank you for the donation, we will be intouch with you with a great detais on you email
         </p>
       </div>
       <div className="w-full max-w-sm space-y-2">
         <dl className="grid gap-2 text-sm md:grid-cols-2 md:gap-1 md:text-base lg:gap-2">
           <div className="font-medium">Transaction ID</div>
-          <div className="text-gray-500 dark:text-gray-400">TRX9876543210</div>
+          <div className="text-gray-500 dark:text-gray-400">{tnx_ref}</div>
           <div className="font-medium">Date & Time</div>
-          <div className="text-gray-500 dark:text-gray-400">June 23, 2022, 10:30 AM</div>
+          <div className="text-gray-500 dark:text-gray-400">{formatDate(created_at)}</div>
+          <div className="font-medium">Full Name</div>
+          <div className="text-gray-500 dark:text-gray-400">{`${first_name}   ${last_name}`}</div>
           <div className="font-medium">Amount</div>
-          <div className="text-gray-500 dark:text-gray-400">$99.00</div>
+          <div className="text-gray-500 dark:text-gray-400">${amount}</div>
         </dl>
       </div>
       <Link
