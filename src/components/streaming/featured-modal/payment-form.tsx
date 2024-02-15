@@ -27,8 +27,10 @@ import {
 } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from 'sonner'
+import { useState } from "react"
+import { Loader } from "lucide-react"
 
-const profileFormSchema = z.object({
+const paymentFromSchema = z.object({
     amount: z
         .string()
         .min(1, {
@@ -38,8 +40,8 @@ const profileFormSchema = z.object({
             message: "amount must not be longer than 30 characters.",
         }),
     currency: z.string(),
-    firstName: z.string().min(1, { message: "The first name should be more than 2 characters" }).max(10),
-    lastName: z.string().min(1, { message: "The first name should be more than 2 characters" }).max(10),
+    firstName: z.string().min(1, { message: "The first name should be more than 2 characters" }).max(20),
+    lastName: z.string().min(1, { message: "The first name should be more than 2 characters" }).max(20),
     phoneNumber: z.string().min(10, 'Minimum 10 digits').max(10, 'Maximum 10 digits'),
     tx_ref: z.string(),
     returnUrl: z.string(),
@@ -53,54 +55,75 @@ const profileFormSchema = z.object({
 
 })
 
-type ProfileFormValues = z.infer<typeof profileFormSchema>
+type PaymentSchema = z.infer<typeof paymentFromSchema>
 
 // This can come from your database or API.
-const defaultValues: Partial<ProfileFormValues> = {
+const defaultValues: Partial<PaymentSchema> = {
     currency: "ETB"
 }
 
 export function PaymentForm({ username }: { username: string }) {
-    const form = useForm<ProfileFormValues>({
-        resolver: zodResolver(profileFormSchema),
+    const [loading, setLoading] = useState(false)
+    const form = useForm<PaymentSchema>({
+        resolver: zodResolver(paymentFromSchema),
         defaultValues,
         mode: "onChange",
     })
 
+    // console.log('fROM: ', form.getValues())
 
 
-    async function onSubmit(data: ProfileFormValues) {
+
+    async function onSubmitHandle(d: PaymentSchema) {
+        const data = form.getValues()
+        setLoading(true)
+        console.log('I AM CLICKED', data)
         const refNumber = uuidv4()
-        const header = {
-            headers: {
-                "Content-Type": "application/json"
-            },
-        };
-        const body = {
-            amount: data.amount, //Amount should be integer
-            currency: data.currency,
-            email: data.email,
-            first_name: data.firstName,
-            last_name: data.lastName,
-            phone_number: data.phoneNumber, //the phone number must not include +251
-            tx_ref: refNumber,
-            callback_url: "http://localhost:3000/success",
-            return_url: "http://localhost:3000/verify-payment?tnx_ref=" + refNumber,
-            customization: {
-                title: "Donation to " + username,
-                description: "Donating about " + data.amount,
+        try {
+
+            const header = {
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            };
+            const body = {
+                amount: data.amount, //Amount should be integer
+                currency: data.currency,
+                email: data.email,
+                first_name: data.firstName,
+                last_name: data.lastName,
+                phone_number: data.phoneNumber, //the phone number must not include +251
+                tx_ref: refNumber,
+                callback_url: "http://localhost:3000/success",
+                return_url: "http://localhost:3000/verify-payment?tnx_ref=" + refNumber,
+                customization: {
+                    title: "Donation to " + username,
+                    description: "Donating about " + data.amount,
+                }
             }
+
+            const response = await axios.post(`http://localhost:3000/api/chapa`, JSON.stringify(body), header);
+            if (response.data) {
+
+                toast.success("YOu have submitted well!")
+            } else {
+                toast.error("Failed to make the transactions")
+            }
+            console.log("The response is : ", response)
+            setLoading(false)
+            console.log(response.data.data.checkout_url);
+            window.location.href = response.data.data.checkout_url;
+        } catch (err) {
+            toast.error("Failed to make the transactions")
+            setLoading(false)
+            console.log("Error is : ", err)
+
         }
-        toast.success("YOu have submitted well!")
-        let response = await axios.post(`http://localhost:3000/api/chapa`, body, header);
-        console.log("The response is : ", response)
-        console.log(response.data.data.checkout_url);
-        window.location.href = response.data.data.checkout_url;
     }
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form onSubmit={form.handleSubmit(onSubmitHandle)} className="space-y-8">
                 <FormField
                     control={form.control}
                     name="amount"
@@ -120,7 +143,7 @@ export function PaymentForm({ username }: { username: string }) {
                     name="currency"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Email</FormLabel>
+                            <FormLabel>Currency</FormLabel>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                                 <FormControl>
                                     <SelectTrigger>
@@ -128,7 +151,7 @@ export function PaymentForm({ username }: { username: string }) {
                                     </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                    <SelectItem value="m@example.com">ETB</SelectItem>
+                                    <SelectItem value="ETB">ETB</SelectItem>
                                     {/* <SelectItem value="m@google.com">USD</SelectItem>
                                     <SelectItem value="m@support.com">DRM/SelectItem> */}
                                 </SelectContent>
@@ -198,8 +221,8 @@ export function PaymentForm({ username }: { username: string }) {
                     )}
                 />
 
-
-                <Button type="submit">Update profile</Button>
+                {/* @ts-ignore */}
+                <Button disabled={loading} onClick={onSubmitHandle} type="submit">{loading && <Loader className="w-3 h-3 animate-spin mr-2" />}Pay Now</Button>
             </form>
         </Form>
     )

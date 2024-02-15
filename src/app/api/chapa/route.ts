@@ -17,10 +17,9 @@ type PaymentAcceptProps = {
     return_url: string
     customization: CustomizationType
 }
-export async function GET(req: Request) {
-    return new Response("Chapa endpoints")
-}
 export async function POST(req: Request) {
+    // const b = await req.json()
+   
     const {
         amount,
         currency,
@@ -32,9 +31,8 @@ export async function POST(req: Request) {
         callback_url,
         return_url,
         customization,
-    } = (req.body) as unknown as PaymentAcceptProps
+    } = (await req.json()) as PaymentAcceptProps
 
-    console.log('THe name and the stuff here are logged : ', amount, currency, first_name, last_name)
     try {
         const header = {
             headers: {
@@ -61,7 +59,7 @@ export async function POST(req: Request) {
         // getting the data back from the intiation 
         try {
 
-            const req = await axios.post("https://api.chapa.co/v1/transaction/initialize" , body , header)
+            const req = await axios.post("https://api.chapa.co/v1/transaction/initialize", body, header)
             const response = await req.data
             resp = response
             return new Response(JSON.stringify(resp), { status: 200 })
@@ -70,7 +68,7 @@ export async function POST(req: Request) {
 
         } catch (err) {
             console.log("Error has occured on [CHAPA_INIT] ")
-            return new Response(JSON.stringify(err) , {status:400})
+            return new Response(JSON.stringify(err), { status: 400 })
         }
 
 
@@ -80,6 +78,6 @@ export async function POST(req: Request) {
 
     } catch (err) {
         console.log("Error has occured [CHAPA]", err)
-        return new Response(JSON.stringify(err) , {status:400})
+        return new Response(JSON.stringify(err), { status: 400 })
     }
 }
