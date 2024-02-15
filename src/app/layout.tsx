@@ -16,6 +16,7 @@ import {
   fontSubheading,
   fontUrban,
 } from "../../assets/fonts"
+import { Analytics } from "@/components/analytics"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -106,6 +107,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]"
             />
             {children}
+            <Analytics />
           </ThemeProvider>
         </body>
       </html>

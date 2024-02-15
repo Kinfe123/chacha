@@ -33,6 +33,7 @@
     "@t3-oss/env-nextjs": "^0.7.3",
     "@tanstack/react-table": "^8.10.7",
     "@uploadthing/react": "^6.0.2",
+    "@vercel/analytics": "^1.1.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
