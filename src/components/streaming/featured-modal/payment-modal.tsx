@@ -1,6 +1,6 @@
 "use client"
 
-import { ElementRef, useRef } from "react"
+import { ElementRef, useRef, useState } from "react"
 import { AlertTriangle, DollarSign } from "lucide-react"
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
@@ -14,14 +14,17 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Hint } from "@/components/hint"
+import { PaymentForm } from "./payment-form"
 
 interface PaymentModalProps {
   name: string,
   disabled: boolean
 }
 
-const PaymentModal = ({ name , disabled }: PaymentModalProps) => {
+const PaymentModal = ({ name, disabled }: PaymentModalProps) => {
   const closeRef = useRef<ElementRef<"button">>(null)
+
+
 
   return (
     <div className="flex h-full items-center justify-center">
@@ -29,7 +32,7 @@ const PaymentModal = ({ name , disabled }: PaymentModalProps) => {
         <DialogTrigger asChild>
           <Button variant="ghost" disabled={disabled}>
             <Hint label="Donate" asChild>
-              <DollarSign className="h-4 w-4 "  />
+              <DollarSign className="h-4 w-4 " />
             </Hint>
           </Button>
         </DialogTrigger>
@@ -37,18 +40,13 @@ const PaymentModal = ({ name , disabled }: PaymentModalProps) => {
           <DialogHeader>
             <DialogTitle className="tracking-norrmal font-heading text-xl">
               Donation to
-              <span className="mr-1 capitalize">{name}</span>
+              <span className="ml-1 capitalize">{name.toUpperCase()}</span>
             </DialogTitle>
           </DialogHeader>
 
-          <Alert>
-            <AlertTriangle className="h-4 w-4" />
-            <AlertTitle>Warning!</AlertTitle>
-            <AlertDescription>
-              This is featre is still on development so make sure to utilize
-              till we finished with everything
-            </AlertDescription>
-          </Alert>
+          <div>
+            <PaymentForm username={name}/>
+          </div>
           <div className="flex justify-between">
             <DialogClose ref={closeRef} asChild>
               <Button variant="ghost">Cancel</Button>
