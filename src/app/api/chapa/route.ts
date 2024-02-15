@@ -61,7 +61,7 @@ export async function POST(req: Request) {
         // getting the data back from the intiation 
         try {
 
-            const req = await axios.post("https://api.chapa.co/v1/transaction/initialize")
+            const req = await axios.post("https://api.chapa.co/v1/transaction/initialize" , body , header)
             const response = await req.data
             resp = response
             return new Response(JSON.stringify(resp), { status: 200 })
