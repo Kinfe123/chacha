@@ -47,7 +47,7 @@ const Card = ({ card }) => {
     return (
         <div
             key={card.id}
-            className="group relative h-[450px] w-[450px] overflow-hidden rounded-3xl bg-transparent border-1 border-white"
+            className="group relative h-[450px] w-[450px] overflow-hidden rounded-3xl bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,176,225,0.12),rgba(255,255,255,0))]  border-1 border-white"
         >
             <FuzzyOverlay />
             <div
