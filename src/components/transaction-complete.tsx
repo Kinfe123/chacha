@@ -3,6 +3,7 @@
 
 import { formatDate } from "@/lib/utils"
 import Link from "next/link"
+import { Separator } from "./ui/separator"
 
 
 type TransactionCompleteProps = {
@@ -20,7 +21,7 @@ export function TransactionComplete({ first_name, last_name, email, amount, tnx_
       <CheckIcon className="h-20 w-20 text-purple-400/50" />
       <div className="text-center space-y-2">
         <h1 className="text-3xl font-bold font-heading md:text-5xl">Transaction Successful</h1>
-        <p className="mx-auto max-w-[400px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+        <p className="mx-auto max-w-[500px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
           Thank you for the donation, we will be intouch with you with a great detais on you email
         </p>
       </div>
@@ -36,14 +37,19 @@ export function TransactionComplete({ first_name, last_name, email, amount, tnx_
           <div className="text-gray-500 dark:text-gray-400">${amount}</div>
         </dl>
       </div>
-      <Link
-        className="flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-        href="/streams"
-      >
-        Go to Dashboard
-      </Link>
+      <Separator className='w-[599px] ' />
+    
+
+        <Link
+          className="flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+          href="/streams"
+        >
+          Go to Dashboard
+        </Link>
+
     </div>
   )
+
 }
 
 
