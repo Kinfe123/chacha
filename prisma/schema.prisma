@@ -97,8 +97,5 @@ model Donations {
   phoneNumber String
   txRef String
   callbackUrl String
-  returnUrl String
-
-
-  
+  returnUrl String 
 }
