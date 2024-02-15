@@ -32,7 +32,7 @@ export async function POST(req: Request) {
         return_url,
         customization,
     } = (await req.json()) as PaymentAcceptProps
-    console.log('The name is :', first_name + last_name)
+    // console.log('The name is :', first_name + last_name)
     try {
         const header = {
             headers: {

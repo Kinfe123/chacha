@@ -77,7 +77,7 @@ export function PaymentForm({ username }: { username: string }) {
     async function onSubmitHandle(d: PaymentSchema) {
         const data = form.getValues()
         setLoading(true)
-        console.log('I AM CLICKED', data)
+   
         const refNumber = uuidv4()
         try {
 
@@ -109,9 +109,9 @@ export function PaymentForm({ username }: { username: string }) {
             } else {
                 toast.error("Failed to make the transactions")
             }
-            console.log("The response is : ", response)
+         
             setLoading(false)
-            console.log(response.data.data.checkout_url);
+       
             window.location.href = response.data.data.checkout_url;
         } catch (err) {
             toast.error("Failed to make the transactions")
