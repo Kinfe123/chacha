@@ -82,3 +82,23 @@ model Block {
   @@index([blockerId])
   @@index([blockedId])
 }
+
+
+
+
+
+model Donations {
+  id String @id @default(uuid())
+  userId String
+  amount String
+  email String
+  firstName String
+  lastName String
+  phoneNumber String
+  txRef String
+  callbackUrl String
+  returnUrl String
+
+
+  
+}

@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 type CustomizationType = {
   title: string
   description: string
@@ -54,6 +56,23 @@ export async function POST(req: Request) {
                  "customization[title]" : customization.title,
                  "customization[description]" : customization.description
        }
+
+       let resp = "";
+       // getting the data back from the intiation 
+       try {
+
+           const req = await axios.post("https://api.chapa.co/v1/transaction/initialize")
+           const response = await req.data
+            resp = response
+
+       }catch(err){
+           console.log("Error has occured on [CHAPA_INIT] ")
+       }
+              
+       
+    //    await axios.post("https://api.chapa.co/v1/transaction/initialize", body, header).then(response => {
+    //      resp = response;
+    //    })
 
   } catch (err) {
     console.log("Error has occured [CHAPA]", err)
