@@ -17,7 +17,7 @@ type TransactionCompleteProps = {
 }
 export function TransactionComplete({ first_name, last_name, email, amount, tnx_ref, created_at }: TransactionCompleteProps) {
   return (
-    <div className="flex flex-col items-center gap-4 p-4">
+    <div className="flex h-screen justify-center flex-col items-center gap-4 p-4">
       <CheckIcon className="h-20 w-20 text-purple-400/50" />
       <div className="text-center space-y-2">
         <h1 className="text-3xl font-bold font-heading md:text-5xl">Transaction Successful</h1>
@@ -38,14 +38,14 @@ export function TransactionComplete({ first_name, last_name, email, amount, tnx_
         </dl>
       </div>
       <Separator className='w-[599px] ' />
-    
 
-        <Link
-          className="flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-          href="/streams"
-        >
-          Go to Dashboard
-        </Link>
+
+      <Link
+        className="flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+        href="/streams"
+      >
+        Go to Dashboard
+      </Link>
 
     </div>
   )
