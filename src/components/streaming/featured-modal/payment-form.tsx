@@ -94,15 +94,15 @@ export function PaymentForm({ username }: { username: string }) {
                 last_name: data.lastName,
                 phone_number: data.phoneNumber, //the phone number must not include +251
                 tx_ref: refNumber,
-                callback_url: "http://localhost:3000/success",
-                return_url: "http://localhost:3000/verify-payment?tnx_ref=" + refNumber,
+                callback_url: `${process.env.NEXT_PUBLIC_APP_URL}/success`,
+                return_url: `${process.env.NEXT_PUBLIC_APP_URL}/verify-payment?tnx_ref=` + refNumber,
                 customization: {
                     title: "Donation to " + username,
                     description: "Donating about " + data.amount,
                 }
             }
 
-            const response = await axios.post(`http://localhost:3000/api/chapa`, JSON.stringify(body), header);
+            const response = await axios.post(`/api/chapa`, JSON.stringify(body), header);
             if (response.data) {
 
                 toast.success("YOu have submitted well!")

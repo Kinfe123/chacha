@@ -23,12 +23,12 @@ const VarifyChapa = ({searchParams}:TxnProps) => {
         const confirmPayment = async () => {
             try {
               ;
-                const url = `http://localhost:3000/api/verify`;
+                // const url = `http://localhost:3000/api/verify`;
                 const header = {
                     headers: { "Content-Type": "application/json" },
                 };
                 const data = { tnx_ref: tnx_ref };
-                let response = await axios.post(url, data, header);
+                let response = await axios.post('/api/verify', data, header);
                 setData(response.data);
             } catch (error) {
                 console.log(error);
