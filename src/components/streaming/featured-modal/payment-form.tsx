@@ -106,7 +106,7 @@ export function PaymentForm({ username }: { username: string }) {
                     name="amount"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>amount</FormLabel>
+                            <FormLabel>Amount</FormLabel>
                             <FormControl>
                                 <Input placeholder="10" {...field} />
                             </FormControl>
@@ -147,7 +147,7 @@ export function PaymentForm({ username }: { username: string }) {
                     name="email"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>amount</FormLabel>
+                            <FormLabel>Email</FormLabel>
                             <FormControl>
                                 <Input placeholder="kinfish@chacha.xyz" {...field} />
                             </FormControl>
@@ -161,7 +161,7 @@ export function PaymentForm({ username }: { username: string }) {
                     name="firstName"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>amount</FormLabel>
+                            <FormLabel>First Name</FormLabel>
                             <FormControl>
                                 <Input placeholder="Kinfish" {...field} />
                             </FormControl>
@@ -175,7 +175,7 @@ export function PaymentForm({ username }: { username: string }) {
                     name="lastName"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>amount</FormLabel>
+                            <FormLabel>Last Name</FormLabel>
                             <FormControl>
                                 <Input placeholder="Farms" {...field} />
                             </FormControl>
@@ -189,7 +189,7 @@ export function PaymentForm({ username }: { username: string }) {
                     name="phoneNumber"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>amount</FormLabel>
+                            <FormLabel>Phone Number</FormLabel>
                             <FormControl>
                                 <Input placeholder="0919191919" {...field} />
                             </FormControl>
