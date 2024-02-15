@@ -2,9 +2,8 @@
 
 import { motion } from "framer-motion"
 
-import { fadeIn, staggerContainer } from "@/lib/utils"
+import { fadeIn } from "@/lib/utils"
 
-import { TitleText } from "./custome-text"
 import styles from "./styles"
 
 const World = () => (
