@@ -39,7 +39,7 @@ const World = () => (
           <img src="/people-03.png" className="h-full w-full" />
         </div>
 
-        <div className="absolute right-[28%] top-[15%] h-[150px] w-[196px] overflow-hidden rounded-[24px] bg-[#09597E] p-[8px]">
+        <div className="absolute right-[28%] top-[15%] h-[150px] w-[220px] overflow-hidden rounded-[24px] bg-[#09597E] p-[8px]">
           <img src="/people-04.png" className="h-full w-full rounded-[24px]" />
           <div className="absolute bottom-3 left-5 flex flex-col gap-1">
             <div className="flex  items-center">
@@ -62,7 +62,7 @@ const World = () => (
               </h4>
             </div>
             <h3 className="text-center text-[24px] font-bold text-white">
-              Hawkins Lab
+              Grow on ChaCha
             </h3>
           </div>
         </div>
@@ -90,7 +90,7 @@ const World = () => (
               </h4>
             </div>
             <h3 className="text-center text-[24px] font-bold text-white">
-              The Upside Down
+              Live Smarter
             </h3>
           </div>
         </div>
