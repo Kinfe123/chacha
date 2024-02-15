@@ -22,7 +22,6 @@ const VarifyChapa = async ({ searchParams }: TxnProps) => {
     };
     const data = { tnx_ref: tnx_ref };
     let response = await axios.post(`${process.env.NEXT_PUBLIC_APP_URL}/api/verify`, data, header);
-    console.log('THe value is: ', response.data.data)
     const res = response.data.data
 
     return (
