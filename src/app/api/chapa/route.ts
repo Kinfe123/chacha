@@ -67,6 +67,7 @@ export async function POST(req: Request) {
 
 
         } catch (err) {
+
             console.log("Error has occured on [CHAPA_INIT] ")
             return new Response(JSON.stringify(err), { status: 400 })
         }
