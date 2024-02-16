@@ -18,7 +18,7 @@ import { PaymentForm } from "./payment-form"
 
 interface PaymentModalProps {
   name: string,
-  disabled: boolean
+  disabled?: boolean
 }
 
 const PaymentModal = ({ name, disabled }: PaymentModalProps) => {
