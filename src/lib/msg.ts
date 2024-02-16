@@ -47,7 +47,7 @@ export const readMessage = async (id: string, read: boolean) => {
 export const getAllMessages = async (id: string) => {
     const allMessages = await db.message.findMany({
         where: {
-            senderId: id,
+            receiverId: id,
         }
     })
     return allMessages
