@@ -1,6 +1,6 @@
 "use server"
 
-import { sendMessage } from "@/lib/msg"
+import { readMessage, sendMessage } from "@/lib/msg"
 import { getSelf } from "@/lib/valid-user"
 
 type MsgProps = {
@@ -23,4 +23,10 @@ export const onSendMessage = async ({
   })
 
   return sendMsg
+}
+
+export const onReadMessage = async (id: string , read: boolean) => {
+    const readmsg = await readMessage(id , read)
+    return readmsg
+    
 }
