@@ -9,6 +9,7 @@ import { BioModal } from "./biography"
 import PaymentModal from "./featured-modal/payment-modal"
 import { MessageSquareIcon, SendHorizonal } from "lucide-react"
 import { Hint } from "@/components/hint"
+import MessageModal from "@/app/(dashboard)/u/[username]/messages/_components/message-modal"
 interface AboutCardProps {
   hostName: string
   hostIdentity: string
@@ -57,17 +58,12 @@ export const AboutCard = ({
               <PaymentModal name={hostName} />
 
             </Hint>
-            <Button
-              type="submit"
-              variant="default"
-              size="sm"
 
-            >
-              <Hint label="Send a onetime message" >
-                <MessageSquareIcon className="h-4 w-4" />
+            <Hint label="Send a onetime message" >
+              <MessageModal name={hostName} hostIdentity={hostIdentity} />
 
-              </Hint>
-            </Button>
+            </Hint>
+
           </div>
         </div>
 

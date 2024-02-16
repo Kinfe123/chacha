@@ -85,7 +85,15 @@ model Block {
 
 
 
-
+model Message {
+  id String @id @default(uuid())
+  receiverId String
+  receieverName String
+  senderId String
+  senderName String
+  msg String
+  createdAt DateTime @default(now())
+}
 
 model Donations {
   id String @id @default(uuid())
