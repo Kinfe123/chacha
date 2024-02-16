@@ -28,7 +28,7 @@ const VarifyChapa = async ({ searchParams }: TxnProps) => {
         <>
             <div className="row align-items-center" >
 
-                <TransactionComplete first_name={res.first_name} last_name={res.last_name} email={res.email} tnx_ref={res.reference} amount={res.amount} created_at={res.created_at} />
+                <TransactionComplete  first_name={res.first_name} last_name={res.last_name} email={res.email} tnx_ref={res.reference} amount={res.amount} created_at={res.created_at} currency={res.currency} />
 
             </div>
         </>
