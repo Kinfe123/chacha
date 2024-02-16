@@ -12,10 +12,11 @@ type TransactionCompleteProps = {
   amount: string,
   email: string,
   tnx_ref: string,
-  created_at: Date
+  created_at: Date,
+  currency: string,
 
 }
-export function TransactionComplete({ first_name, last_name, email, amount, tnx_ref, created_at }: TransactionCompleteProps) {
+export function TransactionComplete({ first_name,currency, last_name, email, amount, tnx_ref, created_at }: TransactionCompleteProps) {
   return (
     <div className="flex h-screen justify-center flex-col items-center gap-4 p-4">
       <CheckIcon className="h-20 w-20 text-purple-400/50" />
@@ -34,7 +35,7 @@ export function TransactionComplete({ first_name, last_name, email, amount, tnx_
           <div className="font-medium">Full Name</div>
           <div className="text-gray-500 dark:text-gray-400">{`${first_name}   ${last_name}`}</div>
           <div className="font-medium">Amount</div>
-          <div className="text-gray-500 dark:text-gray-400">${amount}</div>
+          <div className="text-gray-500 dark:text-gray-400">{currency} {amount}</div>
         </dl>
       </div>
       <Separator className='w-[599px] ' />
