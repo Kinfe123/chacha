@@ -37,5 +37,6 @@ export const onReadMessage = async (id: string , read: boolean) => {
 
 export const onDelete = async (id: string) => {
   const delmsg = await deleteMsg(id)
+  revalidatePath(`/u/${self.username}/messages `)
   return delmsg
 }
