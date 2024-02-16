@@ -52,3 +52,13 @@ export const getAllMessages = async (id: string) => {
     })
     return allMessages
 }
+
+export const deleteMsg = async (id: string) => {
+    const deleteMsg = await db.message.delete({
+        where: {
+            // this is optional we cna live it as id only since it matches with the where clause id
+            id: id
+        }
+    })
+    return deleteMsg
+}

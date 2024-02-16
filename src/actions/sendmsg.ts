@@ -1,6 +1,6 @@
 "use server"
 
-import { readMessage, sendMessage } from "@/lib/msg"
+import { deleteMsg, readMessage, sendMessage } from "@/lib/msg"
 import { getSelf } from "@/lib/valid-user"
 
 type MsgProps = {
@@ -29,4 +29,10 @@ export const onReadMessage = async (id: string , read: boolean) => {
     const readmsg = await readMessage(id , read)
     return readmsg
     
+}
+
+
+export const onDelete = async (id: string) => {
+  const delmsg = await deleteMsg(id)
+  return delmsg
 }
