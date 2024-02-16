@@ -37,6 +37,7 @@ const MarkAs = ({ mmsgid, read }: MarkAsProps) => {
     return (
         <div className='absolute top-3 right-3'>
             <Select
+                defaultValue={readType === '1' ? 'Mark As Read' : "Mark As Unread"}
                 disabled={isPending}
                 value={readType}
                 onValueChange={(value) => handleValueChange(value)}
@@ -46,8 +47,8 @@ const MarkAs = ({ mmsgid, read }: MarkAsProps) => {
                 </SelectTrigger>
                 <SelectContent>
 
-                    <SelectItem value={'0'}>Mark As Read</SelectItem>
-                    <SelectItem value={'1'}>Mark As Unread</SelectItem>
+                    <SelectItem value={'1'}>Mark As Read</SelectItem>
+                    <SelectItem value={'0'}>Mark As Unread</SelectItem>
                 </SelectContent>
             </Select>
 

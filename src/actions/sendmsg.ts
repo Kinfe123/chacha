@@ -2,6 +2,7 @@
 
 import { deleteMsg, readMessage, sendMessage } from "@/lib/msg"
 import { getSelf } from "@/lib/valid-user"
+import { revalidatePath } from "next/cache"
 
 type MsgProps = {
   receiverId: string
@@ -26,7 +27,9 @@ export const onSendMessage = async ({
 }
 
 export const onReadMessage = async (id: string , read: boolean) => {
+    const self = await getSelf()
     const readmsg = await readMessage(id , read)
+    revalidatePath(`/u/${self.username}/messages `)
     return readmsg
     
 }
