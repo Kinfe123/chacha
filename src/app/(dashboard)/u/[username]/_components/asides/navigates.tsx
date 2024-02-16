@@ -48,6 +48,11 @@ export const Navigation = () => {
       href: `/u/${user?.username}/setting`,
       icon: Settings,
     },
+    {
+      label: "1 time Messages",
+      href: `/u/${user?.username}/messages`,
+      icon: Settings,
+    },
   ]
 
   if (!user?.username) {
