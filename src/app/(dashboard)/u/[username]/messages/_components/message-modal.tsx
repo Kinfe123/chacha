@@ -13,7 +13,6 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
-import { Hint } from "@/components/hint"
 
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "sonner"

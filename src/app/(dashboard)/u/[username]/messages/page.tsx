@@ -13,7 +13,7 @@ export const metadata = {
 const Messages = async () => {
     const self = await getSelf()
     const messages = await getAllMessages(self.id)
-    console.log('The meesage deleived to u is : ', messages)
+
     return (
         <div className='p-10'>
             <PageHeader
