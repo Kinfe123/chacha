@@ -22,14 +22,15 @@ type MarkAsProps = {
 
 const MarkAs = ({ mmsgid, read }: MarkAsProps) => {
     const translateRead = read ? '1' : '0'
-    console.log('The translate value is : ', translateRead)
     const [readType, setReadType] = useState(translateRead)
     const [isPending, startTransition] = useTransition()
     const types = ['Mark As Read', 'Mark As Unread']
     const handleValueChange = (value: string) => {
         startTransition(() => {
-            let read = true ? readType === '1' : false
-            onReadMessage(mmsgid, read).then(() => toast.success("Read Status Changed")).catch(() => toast.error("Failed changing the status"))
+            let readState = value === '0' ? false : true
+            setReadType(value)
+            // console.log('The readstate is:', readState, value)
+            onReadMessage(mmsgid, readState).then((data) => toast.success(JSON.stringify(data))).catch(() => toast.error("Failed changing the status"))
         })
 
     }
@@ -37,7 +38,7 @@ const MarkAs = ({ mmsgid, read }: MarkAsProps) => {
     return (
         <div className='absolute top-3 right-3'>
             <Select
-                defaultValue={readType === '1' ? 'Mark As Read' : "Mark As Unread"}
+                defaultValue={translateRead === '1' ? 'Mark As Read' : "Mark As Unread"}
                 disabled={isPending}
                 value={readType}
                 onValueChange={(value) => handleValueChange(value)}

@@ -36,7 +36,7 @@ export const readMessage = async (id: string, read: boolean) => {
             id: id,
         },
         data: {
-            read: !read
+            read: read
         }
     })
     return readMesasge
