@@ -37,7 +37,7 @@ export const InfoCard = ({
               Edit your stream info
             </h2>
             <p className="text-xs text-muted-foreground lg:text-sm">
-              Maximize your visibility
+              Let others know what you cooking..
             </p>
           </div>
           <InfoModal initialName={name} initialThumbnailUrl={thumbnailUrl} />

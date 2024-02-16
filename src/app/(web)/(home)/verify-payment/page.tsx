@@ -4,7 +4,10 @@ import axios from "axios";
 import { TransactionComplete } from "@/components/transaction-complete";
 import { getSelf } from "@/lib/valid-user";
 // import { useRouter } from "next/router";
-
+export const metadata = {
+    title: "Payment",
+    description: "Payment Details"
+}
 type TxnProps = {
     params: string | null,
     searchParams: {
@@ -22,7 +25,7 @@ const VarifyChapa = async ({ searchParams }: TxnProps) => {
     const header = {
         headers: { "Content-Type": "application/json" },
     };
-    const data = { tnx_ref: tnx_ref , userId:self.id  };
+    const data = { tnx_ref: tnx_ref, userId: self.id };
     let response = await axios.post(`${process.env.NEXT_PUBLIC_APP_URL}/api/verify`, data, header);
     const res = response.data.data
 
@@ -30,7 +33,7 @@ const VarifyChapa = async ({ searchParams }: TxnProps) => {
         <>
             <div className="row align-items-center" >
 
-                <TransactionComplete  first_name={res.first_name} last_name={res.last_name} email={res.email} tnx_ref={res.reference} amount={res.amount} created_at={res.created_at} currency={res.currency} />
+                <TransactionComplete first_name={res.first_name} last_name={res.last_name} email={res.email} tnx_ref={res.reference} amount={res.amount} created_at={res.created_at} currency={res.currency} />
 
             </div>
         </>

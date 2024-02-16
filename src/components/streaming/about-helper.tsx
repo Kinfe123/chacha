@@ -6,7 +6,9 @@ import { Button } from "@/components/ui/button"
 import { VerifiedMark } from "@/components/verified-mark"
 
 import { BioModal } from "./biography"
-
+import PaymentModal from "./featured-modal/payment-modal"
+import { MessageSquareIcon, SendHorizonal } from "lucide-react"
+import { Hint } from "@/components/hint"
 interface AboutCardProps {
   hostName: string
   hostIdentity: string
@@ -46,8 +48,29 @@ export const AboutCard = ({
           </Button>
         </div>
         <p className="text-sm">
-          {bio || "This user prefers to keep an air of mystery about them."}
+          {(!bio && isHost) ? "Your bio is a canvas awaiting your brushstrokes, don't leave it blank, let it tell your story" : "...."}
         </p>
+        <div className="ml-auto">
+          <div className="flex items-center justify-center gap-x-2">
+            <Hint label="help him with $">
+
+              <PaymentModal name={hostName} />
+
+            </Hint>
+            <Button
+              type="submit"
+              variant="default"
+              size="sm"
+
+            >
+              <Hint label="Send a onetime message" >
+                <MessageSquareIcon className="h-4 w-4" />
+
+              </Hint>
+            </Button>
+          </div>
+        </div>
+
       </div>
     </div>
   )
