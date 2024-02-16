@@ -9,6 +9,7 @@ import {
   MessageSquare,
   Settings,
   Users,
+  MessageSquareIcon
 } from "lucide-react"
 
 import { NavItem, NavItemSkeleton } from "./items"
@@ -42,6 +43,11 @@ export const Navigation = () => {
       label: "Payments & Analytics",
       href: `/u/${user?.username}/payments`,
       icon: DollarSign,
+    },
+    {
+      label: "1 time Messages",
+      href: `/u/${user?.username}/messages`,
+      icon: MessageSquareIcon,
     },
     {
       label: "Setting",

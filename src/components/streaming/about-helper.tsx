@@ -1,14 +1,16 @@
 "use client"
 
 import Link from "next/link"
+import { MessageSquareIcon, SendHorizonal } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { Hint } from "@/components/hint"
 import { VerifiedMark } from "@/components/verified-mark"
+import MessageModal from "@/app/(dashboard)/u/[username]/messages/_components/message-modal"
 
 import { BioModal } from "./biography"
 import PaymentModal from "./featured-modal/payment-modal"
-import { MessageSquareIcon, SendHorizonal } from "lucide-react"
-import { Hint } from "@/components/hint"
+
 interface AboutCardProps {
   hostName: string
   hostIdentity: string
@@ -48,29 +50,23 @@ export const AboutCard = ({
           </Button>
         </div>
         <p className="text-sm">
-          {(!bio && isHost) ? "Your bio is a canvas awaiting your brushstrokes, don't leave it blank, let it tell your story" : "...."}
+          {!bio && isHost
+            ? "Your bio is a canvas awaiting your brushstrokes, don't leave it blank, let it tell your story"
+            : "...."}
         </p>
-        <div className="ml-auto">
-          <div className="flex items-center justify-center gap-x-2">
-            <Hint label="help him with $">
-
-              <PaymentModal name={hostName} />
-
-            </Hint>
-            <Button
-              type="submit"
-              variant="default"
-              size="sm"
-
-            >
-              <Hint label="Send a onetime message" >
-                <MessageSquareIcon className="h-4 w-4" />
-
+        {!isHost && (
+          <div className="ml-auto">
+            <div className="flex items-center justify-center gap-x-2">
+              <Hint label="help him with $">
+                <PaymentModal name={hostName} />
               </Hint>
-            </Button>
-          </div>
-        </div>
 
+              <Hint label="Send a onetime message">
+                <MessageModal name={hostName} hostIdentity={hostIdentity} />
+              </Hint>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
