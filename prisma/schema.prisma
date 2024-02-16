@@ -94,8 +94,7 @@ model Donations {
   email String
   firstName String
   lastName String
-  phoneNumber String
   txRef String
-  callbackUrl String
-  returnUrl String 
+  created_at DateTime
+  
 }
