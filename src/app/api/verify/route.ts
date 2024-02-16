@@ -15,8 +15,7 @@ export async function POST(req: Request) {
         };
         let response = await axios.get("https://api.chapa.co/v1/transaction/verify/" + tnx_ref, header)
         let resp = await response.data;
-        console.log('The response is: ', resp.data)
-
+   
         const tx_exists = await db.donations.findFirst({
             where: {
                 txRef: resp.data.tx_ref
