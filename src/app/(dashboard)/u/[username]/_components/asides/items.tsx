@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useCreatorSidebar } from "@/store/use-creator-sidebar";
+import { Hint } from "@/components/hint";
 
 interface NavItemProps {
   icon: LucideIcon;
@@ -35,10 +36,20 @@ export const NavItem = ({
     >
       <Link href={href}>
         <div className="flex items-center gap-x-4">
-          <Icon className={cn(
-            "h-4 w-4",
-            collapsed ? "mr-0" : "mr-2"
-          )} />
+         {collapsed && (
+          
+
+          <Hint   asChild label={label}>
+
+            <Icon className={cn(
+              "h-4 w-4",
+              collapsed ? "mr-0" : "mr-2"
+            )} />
+
+          </Hint>
+       
+         )}
+         
           {!collapsed && (
             <span>
               {label}

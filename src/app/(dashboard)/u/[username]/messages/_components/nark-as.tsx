@@ -46,7 +46,7 @@ const MarkAs = ({ mmsgid, read }: MarkAsProps) => {
                 <SelectTrigger className="w-full">
                     <SelectValue placeholder="Read Status" />
                 </SelectTrigger>
-                <SelectContent className="">
+                <SelectContent className="bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
 
                     <SelectItem value={'1'}>Mark As Read</SelectItem>
                     <SelectItem value={'0'}>Mark As Unread</SelectItem>
