@@ -58,8 +58,8 @@ export const NavItem = ({
 
           {!collapsed && (
             <div className='flex justify-between items-center'>
-              <p>{label}</p>
-              <p className="absolute right-5">{isNewMsg}</p>
+              {label === '1 time Messages' ? <p className="font-bold">{label}</p> : <p>{label}</p>}
+              {label === '1 time Messages' ? <p className="font-bold absolute right-5">{isNewMsg}</p> : ''}
             </div>
           )}
         </div>
