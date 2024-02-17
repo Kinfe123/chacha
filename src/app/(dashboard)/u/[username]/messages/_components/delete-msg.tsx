@@ -6,7 +6,7 @@ import { Loader, Trash } from "lucide-react"
 import { useTransition } from "react"
 import { toast } from "sonner"
 
-const DeleteMsgPage = ({id}: {id: string}) => {
+const DeleteMsgPage = ({ id }: { id: string }) => {
     const [isPending, startTransition] = useTransition()
     const handleDelete = () => {
         startTransition(() => {
@@ -17,7 +17,7 @@ const DeleteMsgPage = ({id}: {id: string}) => {
 
     }
     return (
-        <div className="absolute bottom-3 right-3">
+        <div className="absolute bottom-3 right-3 cursor-pointer">
             {isPending ? <Loader className="w-3 h-3 animate-spin" /> : <Trash className="w-3 h-4" onClick={handleDelete} />}
 
 

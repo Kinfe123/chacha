@@ -7,12 +7,14 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useCreatorSidebar } from "@/store/use-creator-sidebar";
+import { Hint } from "@/components/hint";
 
 interface NavItemProps {
   icon: LucideIcon;
   label: string;
   href: string;
   isActive: boolean;
+  isNewMsg?: number
 };
 
 export const NavItem = ({
@@ -20,6 +22,7 @@ export const NavItem = ({
   label,
   href,
   isActive,
+  isNewMsg,
 }: NavItemProps) => {
   const { collapsed } = useCreatorSidebar((state) => state);
 
@@ -35,18 +38,36 @@ export const NavItem = ({
     >
       <Link href={href}>
         <div className="flex items-center gap-x-4">
-          <Icon className={cn(
+          {!collapsed && (<Icon className={cn(
             "h-4 w-4",
             collapsed ? "mr-0" : "mr-2"
-          )} />
+          )} />)}
+          {collapsed && (
+
+
+            <Hint asChild label={label}>
+              <div className="relative">
+
+                {label === '1 time Messages' ? <p className="font-bold absolute top-[-15px] right-[-10px] w-4 h-4 bg-white rounded-full text-black text-center text-[1.10rem]">{isNewMsg}</p> : ''}
+                <Icon className={cn(
+                  "h-4 w-4",
+                  collapsed ? "mr-0" : "mr-2"
+                )} />
+
+              </div>
+            </Hint>
+
+          )}
+
           {!collapsed && (
-            <span>
-              {label}
-            </span>
+            <div className='flex justify-between items-center'>
+              {label === '1 time Messages' ? <p className="font-bold">{label}</p> : <p>{label}</p>}
+              {label === '1 time Messages' ? <p className="font-bold absolute right-5">{isNewMsg}</p> : ''}
+            </div>
           )}
         </div>
       </Link>
-    </Button>
+    </Button >
   );
 };
 

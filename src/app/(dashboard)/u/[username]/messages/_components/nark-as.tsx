@@ -30,7 +30,7 @@ const MarkAs = ({ mmsgid, read }: MarkAsProps) => {
             let readState = value === '0' ? false : true
             setReadType(value)
             // console.log('The readstate is:', readState, value)
-            onReadMessage(mmsgid, readState).then((data) => toast.success(JSON.stringify(data))).catch(() => toast.error("Failed changing the status"))
+            onReadMessage(mmsgid, readState).then((data) => toast.success(data ? 'You have marked as a read' : "You have marked as unread ")).catch(() => toast.error("Failed changing the status"))
         })
 
     }
@@ -44,9 +44,9 @@ const MarkAs = ({ mmsgid, read }: MarkAsProps) => {
                 onValueChange={(value) => handleValueChange(value)}
             >
                 <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Ingress Type" />
+                    <SelectValue placeholder="Read Status" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
 
                     <SelectItem value={'1'}>Mark As Read</SelectItem>
                     <SelectItem value={'0'}>Mark As Unread</SelectItem>

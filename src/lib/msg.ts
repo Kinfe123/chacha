@@ -1,4 +1,5 @@
 import { db } from "./db";
+import { getSelf } from "./valid-user";
 
 type MsgProps = {
     receiverId: string,
@@ -61,4 +62,25 @@ export const deleteMsg = async (id: string) => {
         }
     })
     return deleteMsg
+}
+
+
+export const getAllUnread = async () => {
+    const self = await getSelf()
+    const allUnreaad = await db.message.findMany({
+        where: {
+            receiverId: self.id,
+        }
+    })
+    let count = 0;
+    const filterUnread = allUnreaad.filter((msg) => msg.read === false)
+    for (let i = 0; i < filterUnread.length; i++) {
+        if (!filterUnread[i].read) {
+            count += 1
+        }
+    }
+
+    return count
+
+
 }

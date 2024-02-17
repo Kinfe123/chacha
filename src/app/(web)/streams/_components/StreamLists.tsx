@@ -9,7 +9,7 @@ export const Streams = async () => {
   return (
     <div>
       <h2 className="mb-4 text-lg font-semibold">
-        Streams we think you&apos;ll like
+        We cooked for you... Check them out
       </h2>
       {data.length === 0 && (
         <div className="text-sm text-muted-foreground">No streams found.</div>
