@@ -30,7 +30,7 @@ const MarkAs = ({ mmsgid, read }: MarkAsProps) => {
             let readState = value === '0' ? false : true
             setReadType(value)
             // console.log('The readstate is:', readState, value)
-            onReadMessage(mmsgid, readState).then((data) => toast.success(JSON.stringify(data))).catch(() => toast.error("Failed changing the status"))
+            onReadMessage(mmsgid, readState).then((data) => toast.success(data ? 'You have marked as a read' : "You have marked as unread ")).catch(() => toast.error("Failed changing the status"))
         })
 
     }
