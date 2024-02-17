@@ -46,12 +46,15 @@ export const NavItem = ({
 
 
             <Hint asChild label={label}>
+              <div className="relative">
 
-              <Icon className={cn(
-                "h-4 w-4",
-                collapsed ? "mr-0" : "mr-2"
-              )} />
+                {label === '1 time Messages' ? <p className="font-bold absolute top-[-15px] right-[-10px] w-4 h-4 bg-white rounded-full text-black text-center text-[1.10rem]">{isNewMsg}</p> : ''}
+                <Icon className={cn(
+                  "h-4 w-4",
+                  collapsed ? "mr-0" : "mr-2"
+                )} />
 
+              </div>
             </Hint>
 
           )}
@@ -64,7 +67,7 @@ export const NavItem = ({
           )}
         </div>
       </Link>
-    </Button>
+    </Button >
   );
 };
 
