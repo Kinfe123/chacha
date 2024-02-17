@@ -23,7 +23,7 @@ const Messages = async () => {
             >
                 <PageHeaderHeading size="sm" className="font-heading mb-2 tracking-normal">Messages</PageHeaderHeading>
                 <PageHeaderDescription size="sm">
-                    Explore your private dm from ChachaNS
+                    Explore your private dm from Chacha Jema
                 </PageHeaderDescription>
             </PageHeader>
             {messages.map((r) => {

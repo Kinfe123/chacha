@@ -44,9 +44,9 @@ const MarkAs = ({ mmsgid, read }: MarkAsProps) => {
                 onValueChange={(value) => handleValueChange(value)}
             >
                 <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Ingress Type" />
+                    <SelectValue placeholder="Read Status" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="">
 
                     <SelectItem value={'1'}>Mark As Read</SelectItem>
                     <SelectItem value={'0'}>Mark As Unread</SelectItem>
