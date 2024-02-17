@@ -11,10 +11,10 @@ import {
   Users,
   MessageSquareIcon
 } from "lucide-react"
-
+import { type Message } from "@prisma/client"
 import { NavItem, NavItemSkeleton } from "./items"
 
-export const Navigation = () => {
+export const Navigation = ({ count }: { count: number }) => {
   const pathname = usePathname()
   const { user } = useUser()
 
@@ -23,6 +23,8 @@ export const Navigation = () => {
       label: "Stream",
       href: `/u/${user?.username}`,
       icon: Fullscreen,
+
+
     },
     {
       label: "Keys",
@@ -48,6 +50,7 @@ export const Navigation = () => {
       label: "1 time Messages",
       href: `/u/${user?.username}/messages`,
       icon: MessageSquareIcon,
+      isNewMsg: count
     },
     {
       label: "Setting",
@@ -74,6 +77,7 @@ export const Navigation = () => {
           label={route.label}
           icon={route.icon}
           href={route.href}
+          isNewMsg={count}
           isActive={pathname === route.href}
         />
       ))}
