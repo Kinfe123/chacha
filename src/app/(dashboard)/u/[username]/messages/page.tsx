@@ -26,10 +26,13 @@ const Messages = async () => {
                     Explore your private dm from Chacha Jema
                 </PageHeaderDescription>
             </PageHeader>
-            {messages.map((r) => {
+            <div className="w-full flex flex-wrap gap-3 items-center">
 
-                return (<MessageShow key={r.id} msgid={r.id} msg={r.msg} senderName={r.senderName} senderId={r.senderId} read={r.read} senTime={r.createdAt} />)
-            })}
+                {messages.map((r) => {
+
+                    return (<MessageShow key={r.id} msgid={r.id} msg={r.msg} senderName={r.senderName} senderId={r.senderId} read={r.read} senTime={r.createdAt} />)
+                })}
+            </div>
 
         </div>
     )
