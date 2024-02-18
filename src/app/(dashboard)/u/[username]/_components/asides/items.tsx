@@ -45,10 +45,10 @@ export const NavItem = ({
           {collapsed && (
 
 
-            <Hint asChild label={label}>
+            <Hint side="right" asChild label={label}>
               <div className="relative">
 
-                {label === '1 time Messages' ? <p className="font-bold absolute top-[-15px] right-[-10px] w-4 h-4 bg-white rounded-full text-black text-center text-[1.10rem]">{isNewMsg}</p> : ''}
+                {label === '1 time Messages' ? <p className="font-bold absolute top-[-13px] right-[-10px] flex items-center justify-center   w-4 h-4 bg-white rounded-full text-black text-center text-[0.7rem]">{isNewMsg}</p> : ''}
                 <Icon className={cn(
                   "h-4 w-4",
                   collapsed ? "mr-0" : "mr-2"
