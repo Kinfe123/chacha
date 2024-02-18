@@ -45,7 +45,7 @@ export const NavItem = ({
           {collapsed && (
 
 
-            <Hint asChild label={label}>
+            <Hint side="right" asChild label={label}>
               <div className="relative">
 
                 {label === '1 time Messages' ? <p className="font-bold absolute top-[-13px] right-[-10px] flex items-center justify-center   w-4 h-4 bg-white rounded-full text-black text-center text-[0.7rem]">{isNewMsg}</p> : ''}
