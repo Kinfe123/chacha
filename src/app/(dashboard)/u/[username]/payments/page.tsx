@@ -185,7 +185,7 @@ const Progress = () => {
                 </Card>
               </div>
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-                <Card className="col-span-4 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))] ">
+                <Card className="col-span-4 bg-transparent bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))] ">
                   <CardHeader>
                     <CardTitle className="font-heading">Overview</CardTitle>
                   </CardHeader>
@@ -193,7 +193,7 @@ const Progress = () => {
                     <Overview />
                   </CardContent>
                 </Card>
-                <Card className="col-span-3 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
+                <Card className="col-span-3 bg-transparent bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
                   <CardHeader>
                     <CardTitle className="font-heading">
                       Recent Donation
