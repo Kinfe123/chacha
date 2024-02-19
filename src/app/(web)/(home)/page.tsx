@@ -22,6 +22,9 @@ const LandingPage = () => {
           <HorizontalScrollCarousel />
         </div>
       </div>
+      <div className="overflow-clip">
+        <HorizontalScrollCarousel />
+      </div>
       <div className="relative">
         <World />
       </div>
