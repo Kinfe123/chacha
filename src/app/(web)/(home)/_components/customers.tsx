@@ -2,13 +2,20 @@
 
 import React, { useEffect, useState } from "react";
 import { InfiniteMovingCards } from "./infinte-scrol";
-
+import { motion } from 'framer-motion'
+import { slideIn, staggerContainer } from "@/lib/utils";
 export function Customers() {
     return (
 
-        <div>
+        <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.25 }}
+            className="overflow-hidden mx-auto flex-col"
+        >
             <div>
-                <h1 className="bg-gradient-to-tr from-purple-400 to-red-200 bg-clip-text text-transparent font-bold lg:text-[160px] md:text-[100px] sm:text-[60px] text-[44px] lg:leading-[158.4px] md:leading-[114.4px] sm:leading-[74.4px] leading-[64.4px] uppercase text-center  font-heading ">Supports </h1>
+                <motion.h1 variants={slideIn('right', 'tween', 0.2, 1)} className="bg-gradient-to-tr from-purple-400 to-red-200 bg-clip-text text-transparent font-bold lg:text-[160px] md:text-[100px] sm:text-[60px] text-[44px] lg:leading-[158.4px] md:leading-[114.4px] sm:leading-[74.4px] leading-[64.4px] uppercase text-center  font-heading ">Supports </motion.h1>
             </div>
             <div className="h-[40rem] rounded-md flex flex-col  antialiased bg-white dark:bg-transparent bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.001),rgba(255,255,255,0))] dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
                 <InfiniteMovingCards
@@ -17,7 +24,7 @@ export function Customers() {
                     speed="slow"
                 />
             </div>
-        </div>
+        </motion.div>
     );
 }
 

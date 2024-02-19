@@ -37,11 +37,11 @@ export const slideIn = (
   duration: any
 ) => ({
   hidden: {
-    x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
+    x: direction === "left" ? "-100%" : direction === "right" ? "0%" : 0,
     y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0,
   },
   show: {
-    x: 0,
+    x: "-29%",
     y: 0,
     transition: {
       type,
@@ -204,8 +204,8 @@ export const footerVariants = {
 export function formatDate(input: string | number): string {
   const date = new Date(input)
   return date.toLocaleDateString("en-US", {
-    hour:"2-digit",
-    minute:"numeric",
+    hour: "2-digit",
+    minute: "numeric",
     month: "long",
     day: "numeric",
     year: "numeric",
