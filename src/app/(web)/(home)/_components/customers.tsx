@@ -8,6 +8,7 @@ export function Customers() {
     return (
 
         <motion.div
+        // @ts-ignore
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"

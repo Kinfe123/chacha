@@ -84,7 +84,7 @@ export const InfiniteMovingCards = ({
                 )}
             >
                 {items.map((item, idx) => (
-                    <Image key={idx} src={item.img} width={400} height={100} alt={idx} className="bg-contain object-contain " />
+                    <Image key={idx} src={item.img} width={400} height={100} alt={'support'} className="bg-contain object-contain " />
                     // <li
                     //     className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px]"
                     //     style={{
