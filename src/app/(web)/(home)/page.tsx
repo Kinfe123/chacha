@@ -1,3 +1,4 @@
+import { Customers, Customers2 } from "./_components/customers"
 import ForFree from "./_components/for-free"
 import GetStarted from "./_components/get-started"
 import Hero from "./_components/hero"
@@ -22,9 +23,10 @@ const LandingPage = () => {
           <HorizontalScrollCarousel />
         </div>
       </div>
-      <div className="overflow-clip">
-        <HorizontalScrollCarousel />
+      <div className="">
+        <Customers />
       </div>
+
       <div className="relative">
         <World />
       </div>
