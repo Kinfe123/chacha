@@ -53,7 +53,7 @@ export const Navigation = ({ count }: { count: number }) => {
       isNewMsg: count
     },
     {
-      label: "Setting",
+      label: "Account Setting",
       href: `/u/${user?.username}/setting`,
       icon: Settings,
     },
