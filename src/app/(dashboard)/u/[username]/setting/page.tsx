@@ -22,7 +22,7 @@ export default function AccountPage() {
         aria-labelledby="account-header-heading"
         separated
       >
-        <PageHeaderHeading size="sm">Account</PageHeaderHeading>
+        <PageHeaderHeading size="sm">Account Setting</PageHeaderHeading>
         <PageHeaderDescription size="sm">
           Manage your account settings
         </PageHeaderDescription>
