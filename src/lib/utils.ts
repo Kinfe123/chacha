@@ -41,7 +41,7 @@ export const slideIn = (
     y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0,
   },
   show: {
-    x: "-29%",
+    x: "-20%",
     y: 0,
     transition: {
       type,
