@@ -23,6 +23,7 @@ export default function SignOutPage() {
                 aria-labelledby="sign-out-page-header-heading"
                 className="text-center"
             >
+                
                 <PageHeaderHeading size="lg">Sign out</PageHeaderHeading>
                 <PageHeaderDescription size="lg">
                     Are you sure you want to sign out?
