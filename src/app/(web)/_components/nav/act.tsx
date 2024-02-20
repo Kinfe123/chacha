@@ -86,7 +86,7 @@ export const Actions = async () => {
                       className="mr-2 size-4"
                       aria-hidden="true"
                     />
-                    Billing
+                    Payments
                     <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
                   </Link>
                 </DropdownMenuItem>
