@@ -73,7 +73,7 @@ export const Actions = async () => {
                 <DropdownMenuItem asChild>
                   <Link href={`/u/${user.username}`}>
                     <LayoutDashboard
-                      className="mr-2 size-4"
+                      className="mr-2 size-4 cursor-pointer"
                       aria-hidden="true"
                     />
                     Dashboard
@@ -83,7 +83,7 @@ export const Actions = async () => {
                 <DropdownMenuItem asChild>
                   <Link href={`/u/${user.username}/payments`}>
                     <CreditCard
-                      className="mr-2 size-4"
+                      className="mr-2 size-4 cursor-pointer"
                       aria-hidden="true"
                     />
                     Payments
@@ -92,7 +92,7 @@ export const Actions = async () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link href={`/u/${user.username}/setting`}>
-                    <Settings className="mr-2 size-4" aria-hidden="true" />
+                    <Settings className="mr-2 size-4 cursor-pointer" aria-hidden="true" />
                     Settings
                     <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
                   </Link>
@@ -101,7 +101,7 @@ export const Actions = async () => {
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild>
                 <Link href="/signout">
-                  <LogOut className="mr-2 size-4" aria-hidden="true" />
+                  <LogOut className="mr-2 size-4 cursor-pointer" aria-hidden="true" />
                   Log out
                   <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
                 </Link>
