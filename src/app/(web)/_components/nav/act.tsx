@@ -38,7 +38,7 @@ export const Actions = async () => {
               </span>
             </Link>
           </Button>
-          {user && (<UserNav />)}
+          <UserNav />
 
         </div>
       )}
