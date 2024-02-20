@@ -24,7 +24,7 @@ export const Actions = async () => {
       {/* <UserButton
         afterSignOutUrl="/"
       /> */}
-      {user && (<UserNav />)}
+      <UserNav />
     </div>
   );
 };
