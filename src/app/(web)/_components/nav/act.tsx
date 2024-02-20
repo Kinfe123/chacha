@@ -71,7 +71,7 @@ export const Actions = async () => {
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
                 <DropdownMenuItem asChild>
-                  <Link href="/dashboard/stores">
+                  <Link href={`/u/${user.username}`}>
                     <LayoutDashboard
                       className="mr-2 size-4"
                       aria-hidden="true"
@@ -81,7 +81,7 @@ export const Actions = async () => {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/dashboard/billing">
+                  <Link href={`/u/${user.username}/payments`}>
                     <CreditCard
                       className="mr-2 size-4"
                       aria-hidden="true"
@@ -91,7 +91,7 @@ export const Actions = async () => {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/dashboard/account">
+                  <Link href={`/u/${user.username}/setting`}>
                     <Settings className="mr-2 size-4" aria-hidden="true" />
                     Settings
                     <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
