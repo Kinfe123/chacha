@@ -8,14 +8,19 @@ import {
     PageHeaderHeading,
 } from "@/components/page-header"
 import { Shell } from "@/components/shell"
-
+import { currentUser } from "@clerk/nextjs"
+import { redirect } from "next/navigation"
 export const metadata: Metadata = {
     metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
     title: "Sign out",
     description: "Sign out of your account",
 }
 
-export default function SignOutPage() {
+export default async function SignOutPage() {
+    const user = await currentUser()
+    if(!user) {
+        redirect('/')
+    }
     return (
         <Shell className="max-w-4xl h-full flex justify-center items-center flex-col">
             <PageHeader
@@ -29,6 +34,7 @@ export default function SignOutPage() {
                     Are you sure you want to sign out?
                 </PageHeaderDescription>
             </PageHeader>
+            
             <LogOutButtons />
         </Shell>
     )
