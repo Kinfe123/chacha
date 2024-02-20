@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default async function SignOutPage() {
     const user = await currentUser()
     if(!user) {
-        redirect('/')
+        redirect('/signup')
     }
     return (
         <Shell className="max-w-4xl h-full flex justify-center items-center flex-col">
