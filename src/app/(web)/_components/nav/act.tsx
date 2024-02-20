@@ -1,16 +1,14 @@
 import Link from "next/link";
-import { Clapperboard, CreditCard, LayoutDashboard, LogOut, Settings } from "lucide-react";
+import { Clapperboard } from "lucide-react";
 import {
   SignInButton,
-  UserButton,
+
   currentUser
 } from "@clerk/nextjs";
 
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
-import { DropdownMenuGroup, DropdownMenuItem, DropdownMenuTrigger, DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuShortcut } from "@/components/ui/dropdown-menu";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import UserNav from "@/components/user-nav";
 
 export const Actions = async () => {
