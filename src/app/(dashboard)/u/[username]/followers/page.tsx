@@ -21,6 +21,7 @@ const FollowerPage = async ({ params }: FollowerPageProps) => {
 
   const followers = await getFollowerLists(user?.id)
   const isFollowing = await meFollowing(user?.id)
+  
 
 
   return (
@@ -40,6 +41,7 @@ const FollowerPage = async ({ params }: FollowerPageProps) => {
         {followers.map((follow) => {
           return (
             <FollowerAvater
+              
               key={follow.follower.id}
               imgUrl={follow.follower.imageUrl}
               username={follow.follower.username}
