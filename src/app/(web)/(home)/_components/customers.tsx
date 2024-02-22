@@ -23,7 +23,7 @@ export function Customers() {
                 <InfiniteMovingCards
                     items={testimonials}
                     direction="right"
-                    speed="slow"
+                    speed="normal"
                 />
             </div>
         </motion.div>
@@ -58,7 +58,7 @@ const testimonials = [
         img: '/vmix-1.png'
     },
     // {
-    //     img: '/wire.png'
+    //     img: '/obs-3.png'
     // },
 ];
 
