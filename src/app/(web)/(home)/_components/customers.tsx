@@ -36,7 +36,7 @@ export function Customers2() {
             <InfiniteMovingCards
                 items={rest}
                 direction="left"
-                speed="slow"
+                speed="fast"
             />
         </div>
     );
