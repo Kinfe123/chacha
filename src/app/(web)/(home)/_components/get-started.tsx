@@ -118,19 +118,17 @@ const GetStarted = () => (
         <img
           src="/visions/stereo.svg"
           alt="get-started"
-          className="h-[90%] w-[90%] object-contain text-white"
+          className="h-[90%]  animate-in w-[90%] object-contain text-white"
         />
       </motion.div>
       <motion.div
         variants={fadeIn("left", "tween", 0.2, 1)}
         className="flex flex-[0.75]  flex-col justify-center"
       >
-        {/* <TypingText title="| How Metaversus Works" /> */}
-        {/* <TitleText  title={<>PODCASTS BEING SO EASY</>} /> */}
         <h1 className="text-4xl  bg-gradient-to-tr from-zinc-400/50 via-white to-white/60 bg-clip-text text-transparent font-heading  md:text-5xl lg:text-7xl">
           <span className="bg-gradient-to-tr from-zinc-400/50 via-white to-white/60 bg-clip-text text-transparent">
-          SUITED FOR SOLO
-            </span> <span className="bg-gradient-to-tr from-purple-400 to-red-200  bg-clip-text text-transparent">ARTIST</span>
+            SUITED FOR SOLO
+          </span> <span className="bg-gradient-to-tr from-purple-400 to-red-200  bg-clip-text text-transparent">ARTIST</span>
         </h1>
         <div className=" flex max-w-[500px] flex-col gap-[10px]">
           <p className="text-[18px] font-normal leading-[32.4px] ">
