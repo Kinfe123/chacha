@@ -128,7 +128,9 @@ const GetStarted = () => (
         {/* <TypingText title="| How Metaversus Works" /> */}
         {/* <TitleText  title={<>PODCASTS BEING SO EASY</>} /> */}
         <h1 className="text-4xl  bg-gradient-to-tr from-zinc-400/50 via-white to-white/60 bg-clip-text text-transparent font-heading  md:text-5xl lg:text-7xl">
-          SUITED FOR SOLO ARTIST
+          <span className="bg-gradient-to-tr from-zinc-400/50 via-white to-white/60 bg-clip-text text-transparent">
+          SUITED FOR SOLO
+            </span> <span className="bg-gradient-to-tr from-purple-400 to-red-200  bg-clip-text text-transparent">ARTIST</span>
         </h1>
         <div className=" flex max-w-[500px] flex-col gap-[10px]">
           <p className="text-[18px] font-normal leading-[32.4px] ">
