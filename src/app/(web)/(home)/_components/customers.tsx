@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { InfiniteMovingCards } from "./infinte-scrol";
 import { motion } from 'framer-motion'
 import { slideIn, staggerContainer } from "@/lib/utils";
