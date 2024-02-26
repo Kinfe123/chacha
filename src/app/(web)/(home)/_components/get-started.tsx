@@ -25,9 +25,9 @@ const GetStarted = () => (
         className={`flex-1 ${styles.flexCenter}`}
       >
         <img
-          src="/get-started.png"
+          src="/visions/rockets.svg"
           alt="get-started"
-          className="h-[90%] w-[90%] object-contain"
+          className="h-[90%] w-[90%] text-white object-contain"
         />
       </motion.div>
       {/* <div className="absolute bottom-10 -z-10 flex w-full justify-center">
