@@ -127,6 +127,42 @@ const GetStarted = () => (
       </motion.div>
 
     </motion.div>
+    <motion.div
+      //   variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+      className={`${styles.innerWidth} mx-auto flex flex-col gap-8 lg:flex-row`}
+    >
+      <motion.div
+        variants={fadeIn("right", "tween", 0.2, 1)}
+        className="flex flex-[0.75]  flex-col justify-center"
+      >
+        {/* <TypingText title="| How Metaversus Works" /> */}
+        {/* <TitleText  title={<>PODCASTS BEING SO EASY</>} /> */}
+        <h1 className="text-4xl  bg-gradient-to-tr from-zinc-400/50 via-white to-white/60 bg-clip-text text-transparent font-heading  md:text-5xl lg:text-7xl">
+          <span className="bg-gradient-to-tr from-zinc-400/50 via-white to-white/60 bg-clip-text text-transparent">
+            EARN WHILE MAKING
+          </span> <span className="inline bg-gradient-to-tr from-purple-400 to-red-200  bg-clip-text text-transparent">JOY</span>
+        </h1>
+        <div className="mt-[31px] flex max-w-[500px] flex-col gap-[10px]">
+          <p className="text-[18px] font-normal leading-[32.4px] text-[#B0B0B0]">
+            {" "}
+            Transform your creativity into a sustainable income stream while indulging in what you love most—content creation. Our innovative platform empowers creators to monetize their talents and passions, offering a plethora of opportunities to earn while enjoying the process.
+          </p>
+        </div>
+      </motion.div>
+      <motion.div
+        variants={planetVariants("right")}
+        className={`flex-1 ${styles.flexCenter}`}
+      >
+        <img
+          src="/visions/richs.svg"
+          alt="get-started"
+          className="h-[90%] w-[90%] object-contain text-white"
+        />
+      </motion.div>
+    </motion.div>
   </section>
 )
 
