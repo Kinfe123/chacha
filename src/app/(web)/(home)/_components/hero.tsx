@@ -14,6 +14,7 @@ import {
 import Skewed from "@/components/skewed-txt"
 
 import styles from "./styles"
+import Shiny from "./shiny-btn"
 
 const Hero = () => (
   <section className={`${styles.yPaddings} mx-2 pl-6 sm:pl-16`}>
@@ -54,7 +55,9 @@ const Hero = () => (
             NESS
           </h1>
         </motion.div>
+        <Shiny />
       </div>
+
       <motion.div
         variants={slideInForHero("right", "tween", 0.2, 1)}
         className="relative -mt-[12px] w-full md:-mt-[40px]"
@@ -65,9 +68,10 @@ const Hero = () => (
           alt="cover"
           className="relative z-10 h-full w-screen rounded-tl-[140px] object-cover sm:h-full sm:w-screen"
         /> */}
-        <a href="#explore"></a>
+
       </motion.div>
     </motion.div>
+
   </section>
 )
 
