@@ -17,7 +17,7 @@ import styles from "./styles"
 import Shiny from "./shiny-btn"
 
 const Hero = () => (
-  <section className={`${styles.yPaddings} mx-2 pl-6 sm:pl-16`}>
+  <section className={`${styles.yPaddings} mx-2 pl-6 sm:pl-16 relative overflow-hidden`}>
     <motion.div
       variants={staggerContainer}
       initial="hidden"
@@ -25,10 +25,11 @@ const Hero = () => (
       viewport={{ once: false, amount: 0.25 }}
       className={`${styles.innerWidth} mx-auto flex flex-col`}
     >
-      <div className="t relative z-10 mx-auto flex h-screen flex-col items-center justify-start">
+      <div className="t  z-10 mx-auto flex h-screen flex-col items-center justify-start ">
+        <div className="absolute inset-0 bg-[url(https://snippets.alexandru.so/grid.svg)] bg-fixed w-screen  h-screen overflow-hidden"></div>
         <Skewed />
         <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
-          {/* <span className="bg-gradient-to-tr from-purple-400 to-red-200 bg-clip-text text-transparent ">
+          {/* <span className="bg-gradient-to-tr from-purple-400 to-red-2 00 bg-clip-text text-transparent ">
             CHACHA&apos;
           </span>{" "} */}
           {/* s */}
