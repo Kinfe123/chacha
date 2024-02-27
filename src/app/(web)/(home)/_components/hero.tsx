@@ -55,7 +55,10 @@ const Hero = () => (
             NESS
           </h1>
         </motion.div>
-        <Shiny />
+        <div className="flex justify-center items-center mr-7">
+          <Shiny />
+
+        </div>
       </div>
 
       <motion.div
