@@ -1,9 +1,8 @@
 "use client"
 
-import { ElementRef, useRef, useState } from "react"
-import { AlertTriangle, DollarSign } from "lucide-react"
+import { ElementRef, useRef } from "react"
+import { DollarSign } from "lucide-react"
 
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -31,9 +30,9 @@ const PaymentModal = ({ name, disabled }: PaymentModalProps) => {
       <Dialog>
         <DialogTrigger asChild>
           <Button variant="ghost" disabled={disabled}>
-            <Hint label="Donate" asChild>
+       
               <DollarSign className="h-4 w-4 " />
-            </Hint>
+       
           </Button>
         </DialogTrigger>
         <DialogContent className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
