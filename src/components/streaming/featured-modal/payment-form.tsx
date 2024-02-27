@@ -150,7 +150,7 @@ export function PaymentForm({ username }: { username: string }) {
                                         <SelectValue placeholder="Select a verified email to display" />
                                     </SelectTrigger>
                                 </FormControl>
-                                <SelectContent>
+                                <SelectContent className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,100,210,0.3),rgba(255,255,255,0))]">
                                     <SelectItem value="ETB">ETB</SelectItem>
                                     {/* <SelectItem value="m@google.com">USD</SelectItem>
                                     <SelectItem value="m@support.com">DRM/SelectItem> */}
