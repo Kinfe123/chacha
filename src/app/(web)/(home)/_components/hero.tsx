@@ -28,6 +28,7 @@ const Hero = () => (
       <div className="t  z-10 mx-auto flex h-screen flex-col items-center justify-start ">
         <div className="absolute inset-0 bg-[url(https://snippets.alexandru.so/grid.svg)] bg-fixed w-screen  h-screen overflow-hidden"></div>
         <Skewed />
+
         <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
           {/* <span className="bg-gradient-to-tr from-purple-400 to-red-2 00 bg-clip-text text-transparent ">
             CHACHA&apos;
@@ -56,7 +57,7 @@ const Hero = () => (
             NESS
           </h1>
         </motion.div>
-        <div className="flex justify-center items-center mr-7">
+        <div className="flex justify-center items-center mr-7 mt-2">
           <Shiny />
 
         </div>
