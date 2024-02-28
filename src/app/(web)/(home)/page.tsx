@@ -4,6 +4,7 @@ import GetStarted from "./_components/get-started"
 import Hero from "./_components/hero"
 import { HorizontalScrollCarousel } from "./_components/horizontal-crsl"
 import World from "./_components/people-around"
+import Script from 'next/script'
 
 const LandingPage = () => {
   return (
@@ -26,7 +27,6 @@ const LandingPage = () => {
       <div className="">
         <Customers />
       </div>
-
       <div className="relative">
         <World />
       </div>

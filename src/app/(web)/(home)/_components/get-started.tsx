@@ -11,7 +11,7 @@ import styles from "./styles"
 
 const GetStarted = () => (
   <section
-    className={`${styles.paddings}  relative z-10 mx-10  overflow-hidden rounded-t-3xl  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(192,132,252,0.3),rgba(255,255,255,0))]  `}
+    className={`${styles.paddings}  relative mx-10  overflow-hidden rounded-t-3xl  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(192,132,252,0.3),rgba(255,255,255,0))]  `}
   >
     <motion.div
       //   variants={staggerContainer}
@@ -26,7 +26,7 @@ const GetStarted = () => (
       >
         <img
           src="/visions/rockets.svg"
-          alt="get-started"
+          alt="rockets"
           className="h-[90%] w-[90%] object-contain text-white"
         />
       </motion.div>
@@ -86,7 +86,7 @@ const GetStarted = () => (
       >
         <img
           src="/visions/podcast.svg"
-          alt="get-started"
+          alt="podcasts"
           className="h-[90%] w-[90%] object-contain text-white"
         />
       </motion.div>
@@ -105,7 +105,7 @@ const GetStarted = () => (
       >
         <img
           src="/visions/stereo.svg"
-          alt="get-started"
+          alt="stereo"
           className="h-[90%]  animate-in w-[90%] object-contain text-white"
         />
       </motion.div>
@@ -158,7 +158,7 @@ const GetStarted = () => (
       >
         <img
           src="/visions/richs.svg"
-          alt="get-started"
+          alt="rich"
           className="h-[90%] w-[90%] object-contain text-white"
         />
       </motion.div>
