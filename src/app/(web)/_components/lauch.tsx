@@ -45,7 +45,7 @@ export const LauchText = () => {
 
     return (
         <div
-            className="flex h-screen w-full items-center overflow-hidden border-b-2 border-white/20 backdrop-blur-md   bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(192,132,252,0.3),rgba(255,255,255,0))] to-red-200/5"
+            className="flex h-screen w-full items-center overflow-hidden border-b-2 border-white/20 backdrop-blur-md  rounded-t-full  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(192,132,252,0.3),rgba(255,255,255,0))] to-red-200/5"
             ref={containerRef}
         >
             <div className="absolute inset-0 bg-[url(https://snippets.alexandru.so/grid.svg)] bg-fixed w-screen  h-screen overflow-hidden"></div>
