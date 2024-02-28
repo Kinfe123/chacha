@@ -22,10 +22,17 @@ export default function Contacts() {
     }
 
     return (
-        <div onMouseMove={(e) => { manageMouseMove(e) }} className={cn(styles.container, 'overflow-hidden')}>
+        <div onMouseMove={(e) => { manageMouseMove(e) }} className={cn(styles.container, 'overflow-hidden relative')}>
+            <div className="absolute bottom-10 -z-10 flex w-full justify-center">
+                <div className="animate-pulse-slow h-[400px] w-[400px] max-w-full rounded-full bg-gradient-to-tr from-purple-600 to-[#8057e9] opacity-20 blur-[100px]" />
+            </div>
+            <div className="absolute bottom-0 -z-10 flex w-full justify-center">
+                <div className="animate-pulse-slow h-[310px] w-[310px] max-w-full rounded-full bg-[#8678F9] opacity-20 blur-[100px]" />
+            </div>
             <div ref={plane} className={styles.body}>
-                <Text3d primary={"TURN"} secondary={"Turning"} />
-                <Text3d primary={"Space"} secondary={"Space"} />
+
+                <Text3d primary={"POLISH"} secondary={"TURNING"} />
+                <Text3d primary={"IDEA"} secondary={"IDEA"} />
                 <Text3d primary={"Into"} secondary={"Into"} />
                 <Text3d primary={"Shapes"} secondary={"Shapes"} />
             </div>

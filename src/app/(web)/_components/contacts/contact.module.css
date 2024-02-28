@@ -13,15 +13,16 @@
     position: relative;
     cursor: pointer;
     transition: transform 0.4s;
+    text-align: center;
     transform-style: preserve-3d;
 }
 
 .textContainer p {
-    font-size: 8vw;
+
     font-weight: 700;
     margin: 0px;
     transition: all 0.4s;
-    color: white;
+
     line-height: 8vw;
     text-align: center;
 }
@@ -31,7 +32,6 @@
     transform-origin: bottom center;
     position: absolute;
     top: 0;
-    color: purple;
     text-align: center;
 
     opacity: 0;
