@@ -50,10 +50,10 @@ export const LauchText = () => {
         >
             <div className="absolute inset-0 bg-[url(https://snippets.alexandru.so/grid.svg)] bg-fixed w-screen  h-screen overflow-hidden"></div>
             <span
-                className="absolute text-left font-heading  bottom-0 left-0 mx-auto whitespace-nowrap  font-bold uppercase text-slate-700"
+                className="absolute text-left font-heading  bottom-0 left-0 mx-auto whitespace-nowrap  font-bold uppercase text-whute"
                 ref={textRef}
             >
-                CLOSE TO <span className="">LAUCH</span> SOON.
+                JUST TO <span className="bg-gradient-to-tr from-purple-500 to-red-300 text-black/90 pt-5 rounded-lg px-2 ">LAUNCH</span> SOON.
             </span>
         </div>
     );
