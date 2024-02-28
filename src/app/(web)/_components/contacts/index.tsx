@@ -32,7 +32,8 @@ export default function Contacts() {
             <div ref={plane} className={styles.body}>
 
                 <Text3d primary={"POLISH"} secondary={"TURNING"} />
-                <Text3d primary={"IDEA Into "} secondary={"IDEA Into"} />
+                <Text3d primary={"IDEA "} secondary={"IDEA"} />
+                <Text3d primary={"Into "} secondary={"Into"} />
                 <Text3d primary={"Shapes"} secondary={"Shapes"} />
             </div>
         </div>
