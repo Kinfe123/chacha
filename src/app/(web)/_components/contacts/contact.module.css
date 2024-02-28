@@ -2,43 +2,53 @@
     height: 100vh;
     width: 100vw;
     display: flex;
-    background-color: lightgrey;
-  }
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    overflow: hidden;
+}
 
-  .textContainer{
+.textContainer {
     position: relative;
     cursor: pointer;
     transition: transform 0.4s;
     transform-style: preserve-3d;
-  }
-  
-  .textContainer p{
+}
+
+.textContainer p {
     font-size: 8vw;
     font-weight: 700;
     margin: 0px;
     transition: all 0.4s;
     color: white;
     line-height: 8vw;
-  }
-  
-  .textContainer .secondary{
+    text-align: center;
+}
+
+.textContainer .secondary {
     transform: rotateX(-90deg) translateY(3.5vw);
     transform-origin: bottom center;
     position: absolute;
     top: 0;
-    color: black;
+    color: purple;
+    text-align: center;
+
     opacity: 0;
-  }
-  
-  .textContainer:hover{
+}
+
+.textContainer:hover {
     transform: rotateX(90deg);
-  }
-  
-  .textContainer:hover .secondary{
+    text-align: center;
+}
+
+.textContainer:hover .secondary {
     opacity: 1;
-  }
-  
-  .textContainer:hover .primary{
+    text-align: center;
+}
+
+.textContainer:hover .primary {
     transform: translateY(-100%);
+    text-align: center;
     opacity: 0;
-  }
+}

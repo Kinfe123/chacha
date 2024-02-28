@@ -1,3 +1,4 @@
+import Contacts from "../_components/contacts"
 import { Customers } from "./_components/customers"
 import ForFree from "./_components/for-free"
 import GetStarted from "./_components/get-started"
@@ -26,6 +27,9 @@ const LandingPage = () => {
       </div>
       <div className="">
         <Customers />
+      </div>
+      <div className='overflow-hidden'>
+        <Contacts />
       </div>
       <div className="relative">
         <World />
