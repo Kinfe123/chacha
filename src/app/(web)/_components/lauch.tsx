@@ -1,0 +1,60 @@
+// @ts-nocheck
+'use client'
+
+import React, { useEffect, useRef } from "react";
+
+export const LauchText = () => {
+    const containerRef = useRef(null);
+    const textRef = useRef(null);
+
+    useEffect(() => {
+        resizeText();
+
+        window.addEventListener("resize", resizeText);
+
+        return () => {
+            window.removeEventListener("resize", resizeText);
+        };
+    }, []);
+
+    const resizeText = () => {
+        const container = containerRef.current;
+        const text = textRef.current;
+
+        if (!container || !text) {
+            return;
+        }
+
+        const containerWidth = container.offsetWidth;
+        let min = 1;
+        let max = 2500;
+
+        while (min <= max) {
+            const mid = Math.floor((min + max) / 2);
+            text.style.fontSize = mid + "px";
+
+            if (text.offsetWidth <= containerWidth) {
+                min = mid + 1;
+            } else {
+                max = mid - 1;
+            }
+        }
+
+        text.style.fontSize = max + "px";
+    };
+
+    return (
+        <div
+            className="flex h-screen w-full items-center overflow-hidden border-b-2 border-white/20 backdrop-blur-md   bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(192,132,252,0.3),rgba(255,255,255,0))] to-red-200/5"
+            ref={containerRef}
+        >
+            <div className="absolute inset-0 bg-[url(https://snippets.alexandru.so/grid.svg)] bg-fixed w-screen  h-screen overflow-hidden"></div>
+            <span
+                className="absolute text-left font-heading  bottom-0 left-0 mx-auto whitespace-nowrap  font-bold uppercase text-slate-700"
+                ref={textRef}
+            >
+                CLOSE TO <span className="">LAUCH</span> SOON.
+            </span>
+        </div>
+    );
+};
