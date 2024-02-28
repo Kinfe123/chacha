@@ -50,10 +50,10 @@ export const LauchText = () => {
         >
             <div className="absolute inset-0 bg-[url(https://snippets.alexandru.so/grid.svg)] bg-fixed w-screen  h-screen overflow-hidden"></div>
             <span
-                className="absolute text-left font-heading  bottom-0 left-0 mx-auto whitespace-nowrap  font-bold uppercase text-whute"
+                className="absolute  animate-gradient text-center font-heading  bottom-0 left-0 mx-auto whitespace-nowrap  font-bold uppercase "
                 ref={textRef}
             >
-                JUST TO <span className="bg-gradient-to-tr hover:bg-gradient-to-tr hover:from-purple-400 hover:to-red-200 hover:bg-clip-text  duration-500 transition-color ease-in-out  hover:text-transparent from-purple-500 to-red-300 text-black/90 pt-5 rounded-lg px-2 ">LAUNCH</span> SOON.
+                JUST TO <span className="bg-gradient-to-tr hover:bg-gradient-to-tr hover:from-purple-400 hover:to-red-200 hover:bg-clip-text  duration-500 transition-color ease-in-out   hover:text-transparent from-purple-500 to-red-300 text-black/90 pt-5 rounded-lg px-2 ">LAUNCH</span> SOON.
             </span>
         </div>
     );
