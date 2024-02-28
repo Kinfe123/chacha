@@ -15,7 +15,8 @@ export default function Home() {
     const perspective = window.innerWidth * 4;
     const rotateX = maxRotate * x - maxRotate / 2; 
     const rotateY = (maxRotate * y - maxRotate / 2) * - 1;
-    plane!.current.style.transform = `perspective(${perspective}px) rotateX(${rotateY}deg) rotateY(${rotateX}deg)`
+    // @ts-ignore
+    plane.current.style.transform = `perspective(${perspective}px) rotateX(${rotateY}deg) rotateY(${rotateX}deg)`
   }
 
   return (
