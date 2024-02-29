@@ -46,12 +46,12 @@ export const LauchText = () => {
 
     return (
         <div
-            className="flex h-screen w-full items-center overflow-hidden border-b-2 border-white/20 backdrop-blur-md  rounded-t-full  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(192,132,252,0.3),rgba(255,255,255,0))] to-red-200/5"
+            className=" h-screen w-full flex justify-center items-center  overflow-hidden border-b-2 border-white/20 backdrop-blur-md  rounded-t-full  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(192,132,252,0.3),rgba(255,255,255,0))] to-red-200/5"
             ref={containerRef}
         >
             <div className="absolute inset-0 bg-[url(https://snippets.alexandru.so/grid.svg)] bg-fixed w-screen  h-screen overflow-hidden"></div>
             <span
-                className="absolute  animate-gradient text-center font-heading  bottom-0 left-0 mx-auto whitespace-nowrap  font-bold uppercase "
+                className="absolute   animate-gradient text-center font-heading  bottom-0 left-0 mx-auto whitespace-nowrap   font-bold uppercase "
                 ref={textRef}
             >
                 JUST TO <span className="bg-gradient-to-tr hover:bg-gradient-to-tr hover:from-purple-400 hover:to-red-200 hover:bg-clip-text  duration-500 transition-color ease-in-out   hover:text-transparent from-purple-500 to-red-300 text-black/90 pt-5 rounded-lg px-2 ">LAUNCH</span> SOON.
