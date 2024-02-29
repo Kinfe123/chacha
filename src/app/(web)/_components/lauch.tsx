@@ -40,7 +40,8 @@ export const LauchText = () => {
             }
         }
 
-        text.style.fontSize = max + "px";
+
+        text.style.fontSize = Math.min(max, 175) + "px";
     };
 
     return (
