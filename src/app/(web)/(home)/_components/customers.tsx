@@ -49,6 +49,9 @@ const testimonials = [
         img: '/broad1.png'
     },
     {
+        img: '/obs-3.png'
+    },
+    {
         img: '/stream.png'
     },
     {
