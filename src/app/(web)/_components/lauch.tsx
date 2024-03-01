@@ -3,7 +3,7 @@
 
 import React, { useEffect, useRef } from "react";
 
-export const LauchText = () => {
+export const LaunchText = () => {
     const containerRef = useRef(null);
     const textRef = useRef(null);
 

@@ -1,5 +1,5 @@
 import Contacts from "../_components/contacts"
-import { LauchText } from "../_components/lauch"
+import { LaunchText } from "../_components/lauch"
 import { Customers } from "./_components/customers"
 import ForFree from "./_components/for-free"
 import GetStarted from "./_components/get-started"
@@ -33,7 +33,7 @@ const LandingPage = () => {
         <Contacts />
       </div>
       <div className='relative overflow-hidden'>
-        <LauchText />
+        <LaunchText />
       </div>
       <div className="relative">
         <World />
