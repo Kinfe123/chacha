@@ -2,7 +2,6 @@
 import { z } from 'zod'
 import { db } from "@/lib/db"
 import { revalidatePath } from "next/cache"
-import { eachMonthOfInterval } from 'date-fns'
 
 
 const formSchema = z.object({
@@ -29,7 +28,7 @@ export const submitMsg = async (formData: FormData) => {
         })
     }
 
-    // revalidatePath("/")
+    revalidatePath("/")
     return result
 
 
