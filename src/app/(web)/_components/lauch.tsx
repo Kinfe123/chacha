@@ -41,7 +41,7 @@ export const LaunchText = () => {
         }
 
 
-        text.style.fontSize = Math.min(max, 175) + "px";
+        text.style.fontSize = Math.min(max, 173) + "px";
     };
 
     return (
