@@ -29,7 +29,7 @@ export const submitMsg = async (formData: FormData) => {
         })
     }
 
-    revalidatePath("/")
+    // revalidatePath("/")
     return result
 
 
