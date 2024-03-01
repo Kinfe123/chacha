@@ -90,3 +90,11 @@ model Donations {
   txRef      String
   created_at DateTime
 }
+
+model Forms {
+  id String @id @default(uuid())
+  msg String 
+  email String
+  createdAt     DateTime @default(now())
+
+}
