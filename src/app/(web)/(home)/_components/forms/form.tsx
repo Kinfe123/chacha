@@ -2,10 +2,25 @@
 import styles from './forms.module.css'
 import { cn } from "@/lib/utils"
 import { submitMsg } from '@/actions/forms'
-import { useFormStatus } from 'react-dom'
+import { useFormStatus, useFormState } from 'react-dom'
 import { Loader } from 'lucide-react'
+import { useState } from 'react'
+import { toast } from 'sonner'
+
+const SubmitBtn = () => {
+    const { data, pending } = useFormStatus()
+    const [clicked , setClicked] = useState(false)
+    if(!pending && clicked) {
+        toast.success("We have accpted your form submission")
+    }
+    return (
+        <button disabled={pending} type="submit" onClick={() => setClicked(true)}className={cn(styles.form_submit_btn, 'flex justify-center items-center')}>{pending ? (<Loader className='flex justify-center items-center animate-spin w-4 h-4 ' />) : ""} Submit </button>
+    )
+
+}
 const Form = () => {
-    const { pending } = useFormStatus()
+
+
     return (
         <>
             <div className={cn(styles.form_container, 'mt-20')}>
@@ -19,7 +34,7 @@ const Form = () => {
                         <label for="textarea">How Can We Help You?</label>
                         <textarea cols="50" rows="10" id="textarea" name="msg" />
                     </div>
-                    <button disabled={pending} type="submit" className={cn(styles.form_submit_btn, 'flex justify-center items-center')}>{pending ? (<Loader className='flex justify-center items-center animate-spin w-4 h-4 ' />) : ""} Submit </button>
+                    <SubmitBtn />
                 </form>
             </div >
 
