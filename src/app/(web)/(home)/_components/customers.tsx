@@ -49,13 +49,13 @@ const testimonials = [
         img: '/broad1.png'
     },
     {
-        img: '/obs-3.png'
-    },
-    {
         img: '/stream.png'
     },
     {
         img: '/light-1.png'
+    },
+    {
+        img: '/obs-3.png'
     },
     {
         img: '/vmix-1.png'
