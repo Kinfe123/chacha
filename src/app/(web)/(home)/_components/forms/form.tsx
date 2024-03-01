@@ -1,16 +1,20 @@
+// @ts-nocheck
+
 'use client'
 import styles from './forms.module.css'
 import { cn } from "@/lib/utils"
 import { submitMsg } from '@/actions/forms'
 import { useFormState, useFormStatus } from 'react-dom'
-import { Loader } from 'lucide-react'
+import { Check, Loader } from 'lucide-react'
+import { toast } from 'sonner'
 
 
 
-export default function Form(){
+
+
+export default function Form() {
 
     const [state, formAction] = useFormState(submitMsg, null)
-    console.log('the state is : ', state)
 
     return (
         <>
@@ -38,9 +42,8 @@ export default function Form(){
 const SubmitBtn = () => {
 
     const { data, pending } = useFormStatus()
-
     return (
-        <button disabled={pending} type="submit" className={cn(styles.form_submit_btn, 'flex justify-center items-center')}>{pending ? (<Loader className='flex justify-center items-center animate-spin w-4 h-4 ' />) : ""} Submit </button>
+        <button disabled={pending} type="submit" className={cn(styles.form_submit_btn, 'flex justify-center items-center')}>{pending ? (<Loader className='flex justify-center items-center animate-spin w-4 h-4 ' />) : ""}Submit {(data && !pending) ? <Check className='ml-2 w-3 h-3' /> : ""}  </button>
     )
 
 }
