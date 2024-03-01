@@ -1,3 +1,5 @@
+'use client'
+
 import { FormEvent } from 'react'
 import styles from './forms.module.css'
 import { cn } from "@/lib/utils"
@@ -7,10 +9,10 @@ const Form = () => {
         const formData = new FormData(e.currentTarget)
         const req = await fetch('/api/submit', {
             method: 'POST',
-            body:formData,
+            body: formData,
         })
         const data = await req.json()
-        console.log('THe response is : ' , data)
+        console.log('THe response is : ', data)
 
     }
     return (
