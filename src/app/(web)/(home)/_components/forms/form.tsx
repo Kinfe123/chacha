@@ -1,6 +1,4 @@
 'use client'
-
-import { FormEvent } from 'react'
 import styles from './forms.module.css'
 import { cn } from "@/lib/utils"
 import { submitMsg } from '@/actions/forms'
