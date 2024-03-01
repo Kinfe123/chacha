@@ -96,9 +96,9 @@
 
 .form_container .form_submit_btn {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    align-self: flex-start;
+    align-self: flex-end;
     font-family: inherit;
     color: #717171;
     font-weight: 600;

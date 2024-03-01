@@ -21,9 +21,9 @@ const Form = () => {
                         <label for="textarea">How Can We Help You?</label>
                         <textarea cols="50" rows="10" id="textarea" name="msg" />
                     </div>
-                    <button type="submit" className={cn(styles.form_submit_btn)}>{!pending ? (<Loader className='animate-spin w-4 h-4 mr-2' />) : ""} Submit </button>
+                    <button disabled={pending} type="submit" className={cn(styles.form_submit_btn, 'flex justify-center items-center')}>{!pending ? (<Loader className='flex justify-center items-center animate-spin w-4 h-4 ' />) : ""} Submit </button>
                 </form>
-            </div>
+            </div >
 
 
         </>
