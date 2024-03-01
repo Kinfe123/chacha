@@ -8,10 +8,7 @@ import React from "react"
 const SubmitBtn = () => {
     const sets_ = new Set()
     const { data, pending } = useFormStatus()
-    if (data && !sets_.has(data)) {
-        sets_.add(data)
-        // toast.success("We have received your application")
-    }
+    
     return (
         <button disabled={pending} type="submit" className={cn(styles.form_submit_btn, 'flex justify-center items-center')}>{pending ? (<Loader className='flex justify-center items-center animate-spin w-4 h-4 ' />) : ""} Submit </button>
     )
