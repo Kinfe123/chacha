@@ -25,9 +25,8 @@ const Messages = async () => {
                     Explore your private dm from Chacha Jema
                 </PageHeaderDescription>
             </PageHeader>
-            <Separator className="w-full h-1" />
             {!messages.length && (
-                <div className=" flex flex-col gap-2 justify-center items-center">
+                <div className=" flex mt-10 flex-col gap-2 justify-center items-center">
                     <h1 className="text-3xl font-bold font-heading md:text-5xl">No Messages :)</h1>
                     <p className="mx-auto max-w-full text-center text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                         You can hit up on  <Link href='/streams' className="underline underline-offset-1">streams</Link>  to make your self as <span className='font-semibold'>bold</span> as possible
