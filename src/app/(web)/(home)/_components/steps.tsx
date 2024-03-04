@@ -9,7 +9,7 @@ const StartSteps = ({ number, text }: { number: string; text: string }) => (
     </div>
     <p className="relative  ml-[30px] flex-1 text-[18px] font-normal leading-[32.4px] text-[#B0B0B0]">
       {number === '0 1' ? (<div>{text.slice(0, 9)}
-        <Link href='/strams' className="cursor-pointer font-bold relative after:absolute after:bottom-0 after:left-1 after:h-[1.2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gray-200 after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-95">{text.slice(9, 17)}</Link>{text.slice(17)}</div>) : text}
+        <Link href='/streams' className="cursor-pointer font-bold relative after:absolute after:bottom-0 after:left-1 after:h-[1.2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gray-200 after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-95">{text.slice(9, 17)}</Link>{text.slice(17)}</div>) : text}
     </p>
   </div>
 )
