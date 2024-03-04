@@ -25,7 +25,7 @@ const Messages = async () => {
                     Explore your private dm from Chacha Jema
                 </PageHeaderDescription>
             </PageHeader>
-            <Separator className="w-full h-3" />
+            <Separator className="w-full h-1" />
             {!messages.length && (
                 <div className=" flex flex-col gap-2 justify-center items-center">
                     <h1 className="text-3xl font-bold font-heading md:text-5xl">No Messages :)</h1>
