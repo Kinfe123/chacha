@@ -1,10 +1,13 @@
 import Link from "next/link";
 import { HomeIcon } from "lucide-react";
-import { UserButton } from "@clerk/nextjs";
-
+import { currentUser } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 
-export const Actions = () => {
+import UserNav from "@/components/user-nav";
+
+export const Actions = async () => {
+  const user = await currentUser()
+
   return (
     <div className="flex items-center justify-end gap-x-3">
       <Button
@@ -18,9 +21,10 @@ export const Actions = () => {
           Homie
         </Link>
       </Button>
-      <UserButton
+      {/* <UserButton
         afterSignOutUrl="/"
-      />
+      /> */}
+      <UserNav />
     </div>
   );
 };

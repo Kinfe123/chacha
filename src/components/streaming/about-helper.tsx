@@ -57,9 +57,9 @@ export const AboutCard = ({
         {!isHost && (
           <div className="ml-auto">
             <div className="flex items-center justify-center gap-x-2">
-              <Hint label="help him with $">
-                <PaymentModal name={hostName} />
-              </Hint>
+
+              <PaymentModal name={hostName} />
+
 
               <Hint label="Send a onetime message">
                 <MessageModal name={hostName} hostIdentity={hostIdentity} />

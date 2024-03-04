@@ -1,0 +1,54 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.textContainer {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.4s;
+    text-align: center;
+    transform-style: preserve-3d;
+}
+
+.textContainer p {
+
+    font-weight: 700;
+    margin: 0px;
+    transition: all 0.4s;
+
+    line-height: 8vw;
+    text-align: center;
+}
+
+.textContainer .secondary {
+    transform: rotateX(-90deg) translateY(3.5vw);
+    transform-origin: bottom center;
+    position: absolute;
+    top: 0;
+    text-align: center;
+
+    opacity: 0;
+}
+
+.textContainer:hover {
+    transform: rotateX(90deg);
+    text-align: center;
+}
+
+.textContainer:hover .secondary {
+    opacity: 1;
+    text-align: center;
+}
+
+.textContainer:hover .primary {
+    transform: translateY(-100%);
+    text-align: center;
+    opacity: 0;
+}

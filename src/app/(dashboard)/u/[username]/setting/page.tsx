@@ -10,7 +10,7 @@ import { Shell } from "@/components/shell"
 
 export const metadata: Metadata = {
   //   metadataBase: process.env.NEXT_PUBLIC_APP_URL ?? "",
-  title: "Account",
+  title: "Account Setting",
   description: "Manage your account settings",
 }
 
@@ -22,7 +22,7 @@ export default function AccountPage() {
         aria-labelledby="account-header-heading"
         separated
       >
-        <PageHeaderHeading size="sm">Account</PageHeaderHeading>
+        <PageHeaderHeading size="sm">Account Setting</PageHeaderHeading>
         <PageHeaderDescription size="sm">
           Manage your account settings
         </PageHeaderDescription>

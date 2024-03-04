@@ -1,9 +1,8 @@
 "use client"
 
-import { ElementRef, useRef, useState } from "react"
-import { AlertTriangle, DollarSign } from "lucide-react"
+import { ElementRef, useRef } from "react"
+import { DollarSign } from "lucide-react"
 
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -14,24 +13,23 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Hint } from "@/components/hint"
+
 import { PaymentForm } from "./payment-form"
 
 interface PaymentModalProps {
-  name: string,
+  name: string
   disabled?: boolean
 }
 
 const PaymentModal = ({ name, disabled }: PaymentModalProps) => {
   const closeRef = useRef<ElementRef<"button">>(null)
 
-
-
   return (
     <div className="flex h-full items-center justify-center">
       <Dialog>
         <DialogTrigger asChild>
           <Button variant="ghost" disabled={disabled}>
-            <Hint label="Donate" asChild>
+            <Hint label="Throw them some $">
               <DollarSign className="h-4 w-4 " />
             </Hint>
           </Button>
@@ -45,7 +43,7 @@ const PaymentModal = ({ name, disabled }: PaymentModalProps) => {
           </DialogHeader>
 
           <div>
-            <PaymentForm username={name}/>
+            <PaymentForm username={name} />
           </div>
           <div className="flex justify-between">
             <DialogClose ref={closeRef} asChild>

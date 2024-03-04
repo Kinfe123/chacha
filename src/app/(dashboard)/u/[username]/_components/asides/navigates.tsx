@@ -6,6 +6,7 @@ import {
   DollarSign,
   Fullscreen,
   KeyRound,
+  MessageSquareDashed,
   MessageSquare,
   Settings,
   Users,
@@ -32,19 +33,9 @@ export const Navigation = ({ count }: { count: number }) => {
       icon: KeyRound,
     },
     {
-      label: "Chat",
-      href: `/u/${user?.username}/chat`,
-      icon: MessageSquare,
-    },
-    {
       label: "Jemaw",
       href: `/u/${user?.username}/jemaw`,
       icon: Users,
-    },
-    {
-      label: "Payments & Analytics",
-      href: `/u/${user?.username}/payments`,
-      icon: DollarSign,
     },
     {
       label: "1 time Messages",
@@ -53,7 +44,17 @@ export const Navigation = ({ count }: { count: number }) => {
       isNewMsg: count
     },
     {
-      label: "Setting",
+      label: "Payments & Analytics",
+      href: `/u/${user?.username}/payments`,
+      icon: DollarSign,
+    },
+    {
+      label: "Chat Setting",
+      href: `/u/${user?.username}/chat`,
+      icon: MessageSquareDashed,
+    },
+    {
+      label: "Account Setting",
       href: `/u/${user?.username}/setting`,
       icon: Settings,
     },

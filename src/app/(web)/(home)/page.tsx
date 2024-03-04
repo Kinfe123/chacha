@@ -1,8 +1,13 @@
+import Contacts from "../_components/contacts"
+import { LaunchText } from "../_components/lauch"
+import { Customers } from "./_components/customers"
 import ForFree from "./_components/for-free"
+import Form from "./_components/forms/form"
 import GetStarted from "./_components/get-started"
 import Hero from "./_components/hero"
 import { HorizontalScrollCarousel } from "./_components/horizontal-crsl"
 import World from "./_components/people-around"
+
 
 const LandingPage = () => {
   return (
@@ -22,12 +27,26 @@ const LandingPage = () => {
           <HorizontalScrollCarousel />
         </div>
       </div>
+      <div className="">
+        <Customers />
+      </div>
+      <div className='overflow-hidden'>
+        <Contacts />
+      </div>
+      <div className='relative overflow-hidden'>
+        <LaunchText />
+      </div>
+      <div className="relative mt-20">
+
+        <Form />
+      </div>
       <div className="relative">
         <World />
       </div>
       <div className="mb-0">
         <ForFree />
       </div>
+
     </div>
   )
 }

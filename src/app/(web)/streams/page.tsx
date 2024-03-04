@@ -1,7 +1,4 @@
 import { Suspense } from "react"
-import { UserButton } from "@clerk/nextjs"
-
-import { ModeToggle } from "@/components/mode-toggle"
 
 import { Streams, StreamSkeleton } from "./_components/StreamLists"
 

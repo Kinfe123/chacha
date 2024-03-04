@@ -37,11 +37,11 @@ export const slideIn = (
   duration: any
 ) => ({
   hidden: {
-    x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
+    x: direction === "left" ? "-100%" : direction === "right" ? "0%" : 0,
     y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0,
   },
   show: {
-    x: 0,
+    x: "-20%",
     y: 0,
     transition: {
       type,
@@ -163,6 +163,21 @@ export const planetVariants = (direction: string) => ({
     },
   },
 })
+export const planetVariants1 = (direction: string) => ({
+  hidden: {
+    x: direction === "left" ? "-100%" : "100%",
+    rotate: 120,
+  },
+  show: {
+    x: 0,
+    rotate: 0,
+    transition: {
+      type: "spring",
+      duration: 1.8,
+      delay: 0.5,
+    },
+  },
+})
 
 export const zoomIn = (delay: any, duration: any) => ({
   hidden: {
@@ -204,8 +219,8 @@ export const footerVariants = {
 export function formatDate(input: string | number): string {
   const date = new Date(input)
   return date.toLocaleDateString("en-US", {
-    hour:"2-digit",
-    minute:"numeric",
+    hour: "2-digit",
+    minute: "numeric",
     month: "long",
     day: "numeric",
     year: "numeric",

@@ -17,6 +17,7 @@ interface FollowerListProos {
   username: string
   followId: string
   isFollowing?: boolean
+  disabled: boolean
 }
 
 export function FollowrAvatar({
@@ -24,6 +25,7 @@ export function FollowrAvatar({
   imgUrl,
   followId,
   isFollowing,
+  disabled
 }: FollowerListProos) {
   const [isPending, startTransition] = useTransition()
 
@@ -84,7 +86,7 @@ export function FollowrAvatar({
           </Avatar>
           <div className="ml-4 flex flex-col md:flex-col">
             <CardTitle className="text-base">@{username}</CardTitle>
-            <Button className="mt-2 md:mt-0" size="sm" onClick={toggleFollow}>
+            <Button disabled={disabled} className="mt-2 md:mt-0" size="sm" onClick={toggleFollow}>
               {isPending && <Loader className="mr-2 h-3  w-3 animate-spin" />}
               {isFollowing ? "UnFollow" : "Follow"}
             </Button>
